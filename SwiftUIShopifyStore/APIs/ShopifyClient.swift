@@ -21,37 +21,37 @@ class ShopifyClient: NSObject {
 //
 //    }
     
-    static func getShopInfo(completion: @escaping(ShopInfo)->Void) {
-        //static func getShopInfo(completion: @escaping(ShopInfoResult)->Void) {
-        // Shop information
-        let query = Storefront.buildQuery { $0
-            .shop { $0
-                .name()
-                .moneyFormat()
-                .refundPolicy { $0
-                    .title()
-                    .url()
-                }
-            }
-        }
-
-        let task = client.queryGraphWith(query) { response, error in
-            
-            guard let data = response else {
-                print("Json data error in getShopInfo")
-                return
-            }
-            
-            let shopInfo: ShopInfo = ShopInfo(name: data.shop.name)
-            
-            print("Shop info graphQL: ", data)
-            print("Shop info: ", shopInfo)
-            completion(shopInfo)
-            
-
-        }
-        task.resume()
-    }
+//    static func getShopInfo(completion: @escaping(ShopInfo)->Void) {
+//        //static func getShopInfo(completion: @escaping(ShopInfoResult)->Void) {
+//        // Shop information
+//        let query = Storefront.buildQuery { $0
+//            .shop { $0
+//                .name()
+//                .moneyFormat()
+//                .refundPolicy { $0
+//                    .title()
+//                    .url()
+//                }
+//            }
+//        }
+//
+//        let task = client.queryGraphWith(query) { response, error in
+//            
+//            guard let data = response else {
+//                print("Json data error in getShopInfo")
+//                return
+//            }
+//            
+//            let shopInfo: ShopInfo = ShopInfo(name: data.shop.name)
+//            
+//            print("Shop info graphQL: ", data)
+//            print("Shop info: ", shopInfo)
+//            completion(shopInfo)
+//            
+//
+//        }
+//        task.resume()
+//    }
     
 //    static func getProducts(numbersOfProducts: Int32, completion: @escaping(Array<Product>)->Void){
 //        var products: [Product] = []
@@ -122,10 +122,10 @@ class ShopifyClient: NSObject {
     
 }
 
-struct ShopInfo: Codable{
-    var name: String
-    //var moneyFormat: String
-}
+//struct ShopInfo: Codable{
+//    var name: String
+//    //var moneyFormat: String
+//}
 
 struct Product{
     var title: String
