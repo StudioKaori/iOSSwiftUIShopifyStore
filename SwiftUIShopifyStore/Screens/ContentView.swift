@@ -9,10 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - property
+    
+    private func getShopName() -> Text {
+        var shopName: String = ""
+        ShopifyClient.getShopInfo() { result in
+            shopName = result.name
+        }
+        return Text(shopName)
+    }
 
     var body: some View {
-        Text("Hello")
-            .padding()
+        HStack {
+            getShopName()
+            
+        }
+        
+        
     }
 }
 
