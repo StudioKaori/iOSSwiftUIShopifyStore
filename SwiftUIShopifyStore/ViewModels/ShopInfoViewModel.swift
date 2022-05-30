@@ -10,7 +10,7 @@ import SwiftUI
 import MobileBuySDK
 
 class ShopInfoViewModel: ObservableObject{
-    @Published var shopName = ""
+    @Published var shopInfo: ShopInfo = ShopInfo(name: "")
     
     func getShopInfo(completion: @escaping()->Void) {
         //static func getShopInfo(completion: @escaping(ShopInfoResult)->Void) {
@@ -35,11 +35,11 @@ class ShopInfoViewModel: ObservableObject{
             
             let shopInfo: ShopInfo = ShopInfo(name: data.shop.name)
             
-            print("Shop info graphQL: ", data)
             print("Shop info: ", shopInfo)
             
             DispatchQueue.main.async {
-                self.shopName = shopInfo.name
+                self.shopInfo = shopInfo
+                print("Shop info: ", self.shopInfo)
                 completion()
             }   
 

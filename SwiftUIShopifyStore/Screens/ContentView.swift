@@ -9,21 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - property
+    @ObservedObject var shopInfoViewModel: ShopInfoViewModel = ShopInfoViewModel()
+    @State var shopName = ""
     
-    private func getShopName() -> Text {
-        var shopName: String = ""
-        ShopifyClient.getShopInfo() { shopInfo in
-            shopName = shopInfo.name
-        }
-        return Text(shopName)
-    }
 
     var body: some View {
         HStack {
-            getShopName()
-            
+            Text(shopName)
         }
-        
+        .onAppear{
+            shopInfoViewModel.getShopInfo(completion: {
+                shopName = shopInfoViewModel.shopInfo.name
+            })
+        }
         
     }
 }
