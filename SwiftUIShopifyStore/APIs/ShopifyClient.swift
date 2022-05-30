@@ -5,6 +5,7 @@
 //  Created by Kaori Persson on 2022-04-13.
 //
 
+import Foundation
 import SwiftUI
 import MobileBuySDK
 

@@ -15,6 +15,7 @@
 		43B7EAEE28449CEF007F902E /* apikey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43B7EAED28449CEF007F902E /* apikey.plist */; };
 		43B7EAF22844FAC4007F902E /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EAF12844FAC4007F902E /* KeyManager.swift */; };
 		43B7EAF52844FECD007F902E /* ShopifyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EAF42844FECD007F902E /* ShopifyClient.swift */; };
+		43B7EAF8284558D3007F902E /* ShopInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EAF7284558D3007F902E /* ShopInfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		43B7EAED28449CEF007F902E /* apikey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apikey.plist; sourceTree = "<group>"; };
 		43B7EAF12844FAC4007F902E /* KeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
 		43B7EAF42844FECD007F902E /* ShopifyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopifyClient.swift; sourceTree = "<group>"; };
+		43B7EAF7284558D3007F902E /* ShopInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInfoViewModel.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 		43B7EADE28449BB5007F902E /* SwiftUIShopifyStore */ = {
 			isa = PBXGroup;
 			children = (
+				43B7EAF6284558AC007F902E /* ViewModels */,
 				43B7EAF32844FEC1007F902E /* APIs */,
 				43B7EAF028449E23007F902E /* Helpers */,
 				43B7EAEF28449DFC007F902E /* Screens */,
@@ -107,6 +110,14 @@
 			path = APIs;
 			sourceTree = "<group>";
 		};
+		43B7EAF6284558AC007F902E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				43B7EAF7284558D3007F902E /* ShopInfoViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		8559BC584BF5C17BB0C14A00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +132,6 @@
 				3B2D452442FDFFD8F90E940D /* Pods-SwiftUIShopifyStore.debug.xcconfig */,
 				154D89D1D0C3FC51E19656B4 /* Pods-SwiftUIShopifyStore.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -243,6 +253,7 @@
 				43B7EAE228449BB5007F902E /* ContentView.swift in Sources */,
 				43B7EAE028449BB5007F902E /* SwiftUIShopifyStoreApp.swift in Sources */,
 				43B7EAF22844FAC4007F902E /* KeyManager.swift in Sources */,
+				43B7EAF8284558D3007F902E /* ShopInfoViewModel.swift in Sources */,
 				43B7EAF52844FECD007F902E /* ShopifyClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
