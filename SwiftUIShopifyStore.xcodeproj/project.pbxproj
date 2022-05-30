@@ -13,6 +13,7 @@
 		43B7EAE728449BB7007F902E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43B7EAE628449BB7007F902E /* Preview Assets.xcassets */; };
 		43B7EAEE28449CEF007F902E /* apikey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43B7EAED28449CEF007F902E /* apikey.plist */; };
 		43B7EAF22844FAC4007F902E /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EAF12844FAC4007F902E /* KeyManager.swift */; };
+		43B7EAF52844FECD007F902E /* ShopifyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EAF42844FECD007F902E /* ShopifyClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		43B7EAE628449BB7007F902E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43B7EAED28449CEF007F902E /* apikey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apikey.plist; sourceTree = "<group>"; };
 		43B7EAF12844FAC4007F902E /* KeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
+		43B7EAF42844FECD007F902E /* ShopifyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopifyClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		43B7EADE28449BB5007F902E /* SwiftUIShopifyStore */ = {
 			isa = PBXGroup;
 			children = (
+				43B7EAF32844FEC1007F902E /* APIs */,
 				43B7EAF028449E23007F902E /* Helpers */,
 				43B7EAEF28449DFC007F902E /* Screens */,
 				43B7EAE328449BB7007F902E /* Assets.xcassets */,
@@ -87,6 +90,14 @@
 				43B7EAF12844FAC4007F902E /* KeyManager.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		43B7EAF32844FEC1007F902E /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				43B7EAF42844FECD007F902E /* ShopifyClient.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +174,7 @@
 				43B7EAE228449BB5007F902E /* ContentView.swift in Sources */,
 				43B7EAE028449BB5007F902E /* SwiftUIShopifyStoreApp.swift in Sources */,
 				43B7EAF22844FAC4007F902E /* KeyManager.swift in Sources */,
+				43B7EAF52844FECD007F902E /* ShopifyClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
