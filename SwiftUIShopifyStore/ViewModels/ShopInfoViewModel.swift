@@ -35,8 +35,6 @@ class ShopInfoViewModel: ObservableObject{
             
             let shopInfo: ShopInfo = ShopInfo(name: data.shop.name)
             
-            print("Shop info: ", shopInfo)
-            
             DispatchQueue.main.async {
                 self.shopInfo = shopInfo
                 print("Shop info: ", self.shopInfo)
