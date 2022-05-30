@@ -70,6 +70,9 @@ class ProductListViewModel: ObservableObject {
                     handle: item.node.handle
                 )
                 products.append(product)
+                
+                self.products = products
+                
                 completion()
             }
             
@@ -80,7 +83,8 @@ class ProductListViewModel: ObservableObject {
     }
 }
 
-struct Product{
+struct Product: Identifiable{
+    var id = UUID()
     var title: String
     var description: String
     var price: Decimal
