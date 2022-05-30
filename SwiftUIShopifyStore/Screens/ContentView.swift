@@ -12,8 +12,8 @@ struct ContentView: View {
     
     private func getShopName() -> Text {
         var shopName: String = ""
-        ShopifyClient.getShopInfo() { result in
-            shopName = result.name
+        ShopifyClient.getShopInfo() { shopInfo in
+            shopName = shopInfo.name
         }
         return Text(shopName)
     }
