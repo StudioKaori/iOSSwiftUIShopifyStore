@@ -16,8 +16,8 @@ struct ProductListScreen: View {
         VStack {
             TitleView(title: "Products")
             
-            ForEach($productList) { product in
-                ProductDetailScreen(product: product)
+            ForEach(productList) { product in
+                ProductCardView(product: product)
                 
             }
         } //: VStack
