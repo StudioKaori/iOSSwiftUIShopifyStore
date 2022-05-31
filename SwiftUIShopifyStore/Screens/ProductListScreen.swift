@@ -14,8 +14,8 @@ struct ProductListScreen: View {
     
     var body: some View {
         VStack {
-            ForEach(productList) { product in
-                Text(product.title)
+            ForEach($productList) { product in
+                ProductDetailScreen(product: product)
                 
             }
         } //: VStack

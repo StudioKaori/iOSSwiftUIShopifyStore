@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct ProductDetailScreen: View {
+    // MARK: - Property
+    @Binding var product:Product
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(product.title)
+        }
     }
 }
 
 struct ProductDetailScreen_Previews: PreviewProvider {
+    @State static var previewProduct = Product(id: UUID(), title: "Product title", description: "Super nice!", price: 100, imageUrls: [URL(fileURLWithPath: "https://developer.apple.com/documentation/swiftui/appstorage")], handle: "handle")
     static var previews: some View {
-        ProductDetailScreen()
+        ProductDetailScreen(product: $previewProduct)
     }
 }
