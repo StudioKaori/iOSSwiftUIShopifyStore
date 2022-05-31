@@ -50,7 +50,7 @@ class ProductListViewModel: ObservableObject {
             
             // Unwrap response data
             guard let data = response else {
-                print("jsonData error in getProductInfor")
+                print("jsonData error in getProductInfo")
                 return
             }
             
