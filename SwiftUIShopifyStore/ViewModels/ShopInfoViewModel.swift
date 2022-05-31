@@ -46,7 +46,3 @@ class ShopInfoViewModel: ObservableObject{
     }
 }
 
-struct ShopInfo: Codable{
-    var name: String
-    //var moneyFormat: String
-}
