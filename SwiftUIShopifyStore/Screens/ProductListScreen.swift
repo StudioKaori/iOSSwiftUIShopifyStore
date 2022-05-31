@@ -9,27 +9,17 @@ import SwiftUI
 
 struct ProductListScreen: View {
     // MARK: - property
-    @ObservedObject var shopInfoViewModel: ShopInfoViewModel = ShopInfoViewModel()
-    @State var shopName = ""
-    
     @ObservedObject var productListViewModel: ProductListViewModel = ProductListViewModel()
     @State var productList: [Product] = []
     
     var body: some View {
-        HStack {
-            Text(shopName)
-                .padding()
-            
+        VStack {
             ForEach(productList) { product in
                 Text(product.title)
                 
             }
-        }
+        } //: VStack
         .onAppear{
-            shopInfoViewModel.getShopInfo(completion: {
-                shopName = shopInfoViewModel.shopInfo.name
-            })
-            
             productListViewModel.getProducts(numbersOfProducts: 6, completion: {
                 productList = productListViewModel.products
             })
