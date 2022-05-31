@@ -12,7 +12,8 @@ extension Image {
         self
             .resizable()
             .scaledToFit()
-            .padding(10)
+            .cornerRadius(12)
+            .padding(.vertical, 10)
     }
     
     func iconModifier() -> some View {
@@ -51,7 +52,7 @@ struct ProductCardView: View {
                 }
                 
             }
-            .cornerRadius(12)
+            
             // name
             Text(product.title)
                 .font(.title3)
