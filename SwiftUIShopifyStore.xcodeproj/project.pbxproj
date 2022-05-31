@@ -20,6 +20,7 @@
 		43B7EAFD2845D0CD007F902E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EAFC2845D0CD007F902E /* Product.swift */; };
 		43B7EAFF2845D11C007F902E /* ShopInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EAFE2845D11C007F902E /* ShopInfo.swift */; };
 		43B7EB012845D3B6007F902E /* ProductListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EB002845D3B6007F902E /* ProductListScreen.swift */; };
+		43B7EB032845D544007F902E /* ProductDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EB022845D544007F902E /* ProductDetailScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		43B7EAFC2845D0CD007F902E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		43B7EAFE2845D11C007F902E /* ShopInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInfo.swift; sourceTree = "<group>"; };
 		43B7EB002845D3B6007F902E /* ProductListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListScreen.swift; sourceTree = "<group>"; };
+		43B7EB022845D544007F902E /* ProductDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailScreen.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 			children = (
 				43B7EAE128449BB5007F902E /* ContentView.swift */,
 				43B7EB002845D3B6007F902E /* ProductListScreen.swift */,
+				43B7EB022845D544007F902E /* ProductDetailScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43B7EB032845D544007F902E /* ProductDetailScreen.swift in Sources */,
 				43B7EAE228449BB5007F902E /* ContentView.swift in Sources */,
 				43B7EAE028449BB5007F902E /* SwiftUIShopifyStoreApp.swift in Sources */,
 				43B7EAFA28456357007F902E /* ProductListViewModel.swift in Sources */,
