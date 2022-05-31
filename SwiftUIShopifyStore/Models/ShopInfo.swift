@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ShopInfo: Codable{
+struct ShopInfo{
     var name: String
     //var moneyFormat: String
 }
