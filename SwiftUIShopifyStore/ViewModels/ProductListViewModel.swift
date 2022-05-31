@@ -83,12 +83,3 @@ class ProductListViewModel: ObservableObject {
     }
 }
 
-struct Product: Identifiable{
-    var id = UUID()
-    var title: String
-    var description: String
-    var price: Decimal
-    var imageUrls: [URL]
-    var handle: String
-    
-}

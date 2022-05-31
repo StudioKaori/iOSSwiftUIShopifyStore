@@ -17,6 +17,7 @@
 		43B7EAF52844FECD007F902E /* ShopifyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EAF42844FECD007F902E /* ShopifyClient.swift */; };
 		43B7EAF8284558D3007F902E /* ShopInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EAF7284558D3007F902E /* ShopInfoViewModel.swift */; };
 		43B7EAFA28456357007F902E /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EAF928456357007F902E /* ProductListViewModel.swift */; };
+		43B7EAFD2845D0CD007F902E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EAFC2845D0CD007F902E /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		43B7EAF42844FECD007F902E /* ShopifyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopifyClient.swift; sourceTree = "<group>"; };
 		43B7EAF7284558D3007F902E /* ShopInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInfoViewModel.swift; sourceTree = "<group>"; };
 		43B7EAF928456357007F902E /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		43B7EAFC2845D0CD007F902E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 		43B7EADE28449BB5007F902E /* SwiftUIShopifyStore */ = {
 			isa = PBXGroup;
 			children = (
+				43B7EAFB2845D0B7007F902E /* Models */,
 				43B7EAF6284558AC007F902E /* ViewModels */,
 				43B7EAF32844FEC1007F902E /* APIs */,
 				43B7EAF028449E23007F902E /* Helpers */,
@@ -119,6 +122,14 @@
 				43B7EAF928456357007F902E /* ProductListViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		43B7EAFB2845D0B7007F902E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				43B7EAFC2845D0CD007F902E /* Product.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8559BC584BF5C17BB0C14A00 /* Frameworks */ = {
@@ -259,6 +270,7 @@
 				43B7EAF22844FAC4007F902E /* KeyManager.swift in Sources */,
 				43B7EAF8284558D3007F902E /* ShopInfoViewModel.swift in Sources */,
 				43B7EAF52844FECD007F902E /* ShopifyClient.swift in Sources */,
+				43B7EAFD2845D0CD007F902E /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
