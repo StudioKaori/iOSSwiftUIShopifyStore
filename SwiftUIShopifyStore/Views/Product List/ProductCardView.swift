@@ -12,14 +12,17 @@ extension Image {
         self
             .resizable()
             .scaledToFit()
+            .padding(10)
     }
     
     func iconModifier() -> some View {
         self
             .imageModifier()
-            .frame(maxWidth: 128)
-            .foregroundColor(.purple)
+            //.frame(maxWidth: 128)
+            .scaledToFit()
+            .foregroundColor(.gray)
             .opacity(0.5)
+            .padding(10)
     }
 }
 
@@ -39,7 +42,7 @@ struct ProductCardView: View {
                         image.imageModifier()
                             .transition(.move(edge: .bottom))
                     case .failure(_):
-                        Image(systemName: "ant.circle.fill").iconModifier()
+                        Image(systemName: "xmark.icloud.fill").iconModifier()
                     case .empty:
                         Image(systemName: "photo.circle.fill").iconModifier()
                     @unknown default:
@@ -48,8 +51,15 @@ struct ProductCardView: View {
                 }
                 
             }
+            .cornerRadius(12)
             // name
+            Text(product.title)
+                .font(.title3)
+                .fontWeight(.black)
             // price
+            Text("$\(product.price)" as String)
+                .fontWeight(.semibold)
+                .foregroundColor(.gray)
         }) //: VStack
     }
 }
