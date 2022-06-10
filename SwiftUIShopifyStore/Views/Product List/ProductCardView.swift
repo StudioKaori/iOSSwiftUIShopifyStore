@@ -55,8 +55,8 @@ struct ProductCardView: View {
             
             // name
             Text(product.title)
-                .font(.title3)
-                .fontWeight(.black)
+                .font(Font.custom("Futura-Medium", size: 18))
+                //.fontWeight(.medium)
             // price
             Text("$\(product.price)" as String)
                 .fontWeight(.semibold)
