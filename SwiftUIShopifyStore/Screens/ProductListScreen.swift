@@ -9,22 +9,19 @@ import SwiftUI
 
 struct ProductListScreen: View {
     // MARK: - property
-    @ObservedObject var productListViewModel: ProductListViewModel = ProductListViewModel()
-    @State var productList: [Product] = []
+    @StateObject private var productListViewModel = ProductListViewModel()
     
     var body: some View {
         VStack {
             TitleView(title: "Products")
             
-            ForEach(productList) { product in
+            ForEach(productListViewModel.products) { product in
                 ProductCardView(product: product)
                 
             }
         } //: VStack
         .onAppear{
-            productListViewModel.getProducts(numbersOfProducts: 6, completion: {
-                productList = productListViewModel.products
-            })
+            productListViewModel.getProducts(numbersOfProducts: 6)
         }
     }
 }

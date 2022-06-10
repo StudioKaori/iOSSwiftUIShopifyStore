@@ -26,7 +26,7 @@ class ProductListViewModel: ObservableObject {
     
     
     // MARK: - Methods
-    func getProducts(numbersOfProducts: Int32, completion: @escaping()->Void){
+    func getProducts(numbersOfProducts: Int32){
         var products: [Product] = []
         // products information
         // https://shopify.dev/api/storefront/2022-04/queries/products
@@ -60,7 +60,7 @@ class ProductListViewModel: ObservableObject {
             }
         }
         
-        let productsTask = ShopifyClient.client.queryGraphWith(productsQuery) { response, error in
+        let productsTask = ShopifyClient.client.queryGraphWith(productsQuery) { [weak self] response, error in
             
             // Unwrap response data
             guard let data = response else {
@@ -84,16 +84,12 @@ class ProductListViewModel: ObservableObject {
                     handle: item.node.handle
                 )
                 products.append(product)
-                
-                self.products = products
-                
-                completion()
+                print("Product View Model : \(products)")
+                self?.products = products
             }
-            
         }
         productsTask.resume()
         
-        // End of products information
-    }
+    } //:getProducts
 }
 
