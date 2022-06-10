@@ -8,10 +8,24 @@
 import Foundation
 import SwiftUI
 import MobileBuySDK
+import Combine
 
 class ProductListViewModel: ObservableObject {
+    
+    // MARK: - Properties
     @Published var products: [Product] = []
     
+    private var cancellables: [AnyCancellable] = []
+    
+    // Cancel all subscription at the timing of deinit
+    deinit {
+        cancellables.forEach { cancellable in
+            cancellable.cancel()
+        }
+    }
+    
+    
+    // MARK: - Methods
     func getProducts(numbersOfProducts: Int32, completion: @escaping()->Void){
         var products: [Product] = []
         // products information
