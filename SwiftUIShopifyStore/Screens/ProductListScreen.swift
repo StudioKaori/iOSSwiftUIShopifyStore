@@ -11,6 +11,7 @@ struct ProductListScreen: View {
     // MARK: - property
     @StateObject private var productListViewModel = ProductListViewModel()
     
+    // MARK: - body
     var body: some View {
         VStack {
             TitleView(title: "Products")

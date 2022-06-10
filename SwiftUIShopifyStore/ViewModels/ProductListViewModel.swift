@@ -84,9 +84,9 @@ class ProductListViewModel: ObservableObject {
                     handle: item.node.handle
                 )
                 products.append(product)
-                print("Product View Model : \(products)")
-                self?.products = products
             }
+            print("Product View Model : \(products)")
+            self?.products = products
         }
         productsTask.resume()
         
