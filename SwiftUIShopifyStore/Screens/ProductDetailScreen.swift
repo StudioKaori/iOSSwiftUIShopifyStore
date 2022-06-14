@@ -16,7 +16,7 @@ struct ProductDetailScreen: View {
             // navbar
             NavigationBarDetailView()
                 .padding(.horizontal)
-                .padding(.top)
+                .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
             
             // header
             Text("Hello")
@@ -31,6 +31,7 @@ struct ProductDetailScreen: View {
             Spacer()
         }  //: Vstack
         .ignoresSafeArea(.all, edges: .all)
+        
     }
 }
 
@@ -38,5 +39,6 @@ struct ProductDetailScreen_Previews: PreviewProvider {
     @State static var previewProduct = previewSampleProductObject
     static var previews: some View {
         ProductDetailScreen(product: $previewProduct)
+            .background(Color.gray)
     }
 }
