@@ -11,6 +11,7 @@ struct ProductDetailView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5, content: {
             // navbar
+            NavigationBarDetailView()
             // header
             Text("sam")
             // detail top part
