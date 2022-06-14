@@ -64,7 +64,10 @@ class ProductListViewModel: ObservableObject {
             
             // Unwrap response data
             guard let data = response else {
-                print("jsonData error in getProductInfo")
+                print("Query GraphQL error in getProductInfo")
+                if let error = error {
+                    print("Query GraphQL error: \(error)")
+                }
                 return
             }
             

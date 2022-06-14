@@ -26,18 +26,21 @@ class ShopInfoViewModel: ObservableObject{
             }
         }
 
-        let task = ShopifyClient.client.queryGraphWith(query) { response, error in
+        let task = ShopifyClient.client.queryGraphWith(query) { [weak self] response, error in
             
             guard let data = response else {
-                print("Json data error in getShopInfo")
+                print("Query GraphQL error in getShopInfo")
+                if let error = error {
+                    print("Query GraphQL error \(error)")
+                }
                 return
             }
             
             let shopInfo: ShopInfo = ShopInfo(name: data.shop.name)
             
             DispatchQueue.main.async {
-                self.shopInfo = shopInfo
-                print("Shop info: ", self.shopInfo)
+                self?.shopInfo = shopInfo
+                print("Shop info: \(shopInfo)")
                 completion()
             }   
 
