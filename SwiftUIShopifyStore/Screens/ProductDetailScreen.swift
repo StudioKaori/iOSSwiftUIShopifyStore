@@ -12,9 +12,20 @@ struct ProductDetailScreen: View {
     @Binding var product:Product
     
     var body: some View {
-        HStack {
+        VStack(alignment: .leading, spacing: 5, content: {
+            // navbar
+            // header
             Text(product.title)
-        }
+            
+            // detail top part
+            // detail bottom part
+            // ratings sizes
+            // description
+            // quantity + favorite
+            // add to cart
+            Spacer()
+        })  //: Vstack
+        .ignoresSafeArea(.all, edges: all)
     }
 }
 
