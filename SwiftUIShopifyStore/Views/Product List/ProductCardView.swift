@@ -34,34 +34,36 @@ struct ProductCardView: View {
     
     // MARK: - Body
     var body: some View {
-        VStack(alignment: .leading, spacing: 6, content: {
-            // photo
-            ZStack {
-                AsyncImage(url: product.imageUrls[0], transaction: Transaction(animation: .spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.25))) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image.imageModifier()
-                            .transition(.move(edge: .bottom))
-                    case .failure(_):
-                        Image(systemName: "xmark.icloud.fill").iconModifier()
-                    case .empty:
-                        Image(systemName: "photo.circle.fill").iconModifier()
-                    @unknown default:
-                        ProgressView()
+        NavigationLink(destination: ProductDetailScreen(product: product)) {
+            VStack(alignment: .leading, spacing: 6, content: {
+                // photo
+                ZStack {
+                    AsyncImage(url: product.imageUrls[0], transaction: Transaction(animation: .spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.25))) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image.imageModifier()
+                                .transition(.move(edge: .bottom))
+                        case .failure(_):
+                            Image(systemName: "xmark.icloud.fill").iconModifier()
+                        case .empty:
+                            Image(systemName: "photo.circle.fill").iconModifier()
+                        @unknown default:
+                            ProgressView()
+                        }
                     }
+                    
                 }
                 
-            }
-            
-            // name
-            Text(product.title)
-                .font(Font.custom("Futura-Medium", size: 18))
-                //.fontWeight(.medium)
-            // price
-            Text("$\(product.price)" as String)
-                .fontWeight(.semibold)
-                .foregroundColor(.gray)
-        }) //: VStack
+                // name
+                Text(product.title)
+                    .font(Font.custom("Futura-Medium", size: 18))
+                    //.fontWeight(.medium)
+                // price
+                Text("$\(product.price)" as String)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.gray)
+            }) //: VStack
+        } //: Navigation link
     }
 }
 

@@ -14,7 +14,7 @@ struct HeaderDetailView: View {
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("Protective gear")
+            Text("Product")
             
             Text(productTitle)
                 .font(.largeTitle)

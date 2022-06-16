@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductDetailScreen: View {
     // MARK: - Property
-    @Binding var product:Product
+    var product:Product
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -30,6 +30,7 @@ struct ProductDetailScreen: View {
             // add to cart
             Spacer()
         }  //: Vstack
+        .background(Color.gray)
         .ignoresSafeArea(.all, edges: .all)
         
     }
@@ -38,7 +39,7 @@ struct ProductDetailScreen: View {
 struct ProductDetailScreen_Previews: PreviewProvider {
     @State static var previewProduct = previewSampleProductObject
     static var previews: some View {
-        ProductDetailScreen(product: $previewProduct)
+        ProductDetailScreen(product: previewProduct)
             .background(Color.gray)
     }
 }

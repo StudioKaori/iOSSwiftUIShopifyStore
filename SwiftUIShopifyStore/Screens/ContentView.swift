@@ -13,17 +13,19 @@ struct ContentView: View {
     @State var shopName = ""
 
     var body: some View {
-        VStack {
-            Text(shopName)
-                .padding()
-            
-            ProductListScreen()
+        NavigationView {
+            VStack {
+                Text(shopName)
+                    .padding()
+                
+                ProductListScreen()
 
-        } //: VStack
-        .onAppear{
-            shopInfoViewModel.getShopInfo(completion: {
-                shopName = shopInfoViewModel.shopInfo.name
-            })
+            } //: VStack
+            .onAppear{
+                shopInfoViewModel.getShopInfo(completion: {
+                    shopName = shopInfoViewModel.shopInfo.name
+                })
+            }
         }
         
     }
