@@ -12,9 +12,7 @@ import MobileBuySDK
 class ShopInfoViewModel: ObservableObject{
     @Published var shopInfo: ShopInfo = ShopInfo(name: "")
     
-    func getShopInfo(completion: @escaping()->Void) {
-        //static func getShopInfo(completion: @escaping(ShopInfoResult)->Void) {
-        // Shop information
+    func getShopInfo() {
         let query = Storefront.buildQuery { $0
             .shop { $0
                 .name()
@@ -41,7 +39,6 @@ class ShopInfoViewModel: ObservableObject{
             DispatchQueue.main.async {
                 self?.shopInfo = shopInfo
                 print("Shop info: \(shopInfo)")
-                completion()
             }   
 
         }

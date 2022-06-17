@@ -9,22 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - property
-    @ObservedObject var shopInfoViewModel: ShopInfoViewModel = ShopInfoViewModel()
-    @State var shopName = ""
+    @StateObject var shopInfoViewModel: ShopInfoViewModel = ShopInfoViewModel()
 
     var body: some View {
         NavigationView {
             VStack {
-                Text(shopName)
+                Text(shopInfoViewModel.shopInfo.name)
                     .padding()
                 
                 ProductListScreen()
 
             } //: VStack
             .onAppear{
-                shopInfoViewModel.getShopInfo(completion: {
-                    shopName = shopInfoViewModel.shopInfo.name
-                })
+                shopInfoViewModel.getShopInfo()
             }
         }
         
