@@ -29,6 +29,7 @@
 		43FAD941285C852A00DE3B61 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD940285C852A00DE3B61 /* HomeScreen.swift */; };
 		43FAD943285C863900DE3B61 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD942285C863900DE3B61 /* Font.swift */; };
 		43FAD947285C892E00DE3B61 /* main-s.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 43FAD946285C892E00DE3B61 /* main-s.mp4 */; };
+		43FAD94A285C8C1F00DE3B61 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD949285C8C1F00DE3B61 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		43FAD940285C852A00DE3B61 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		43FAD942285C863900DE3B61 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		43FAD946285C892E00DE3B61 /* main-s.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "main-s.mp4"; sourceTree = "<group>"; };
+		43FAD949285C8C1F00DE3B61 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,7 @@
 			children = (
 				43B7EB05284624C2007F902E /* Product List */,
 				43C41B1A2858A50800525824 /* ProductDetail */,
+				43FAD949285C8C1F00DE3B61 /* PlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				43B7EB0A28462819007F902E /* ProductCardView.swift in Sources */,
 				43B7EAF8284558D3007F902E /* ShopInfoViewModel.swift in Sources */,
 				43B7EAF52844FECD007F902E /* ShopifyClient.swift in Sources */,
+				43FAD94A285C8C1F00DE3B61 /* PlayerView.swift in Sources */,
 				43B7EB082846250C007F902E /* TitleView.swift in Sources */,
 				43FAD943285C863900DE3B61 /* Font.swift in Sources */,
 				43B7EB0D2846292B007F902E /* PreviewSampleObjects.swift in Sources */,
