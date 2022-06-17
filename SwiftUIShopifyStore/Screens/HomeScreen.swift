@@ -1,16 +1,17 @@
 //
-//  ContentView.swift
+//  HomeScreen.swift
 //  SwiftUIShopifyStore
 //
-//  Created by Kaori Persson on 2022-05-30.
+//  Created by Kaori Persson on 2022-06-17.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeScreen: View {
     // MARK: - property
     @StateObject var shopInfoViewModel: ShopInfoViewModel = ShopInfoViewModel()
-
+    
+    // MARK: - Body
     var body: some View {
         NavigationView {
             VStack {
@@ -28,12 +29,11 @@ struct ContentView: View {
                 shopInfoViewModel.getShopInfo()
             }
         }
-        
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeScreen()
     }
 }
