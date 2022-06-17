@@ -14,14 +14,13 @@ struct HeaderDetailView: View {
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("Product")
-            
+
             Text(productTitle)
-                .font(.largeTitle)
-                .fontWeight(.black)
+                .font(.logoFont(size: 64))
+                .kerning(-4)
             
         } //: Vstack
-        .foregroundColor(.white)
+        .foregroundColor(.black)
     }
 }
 

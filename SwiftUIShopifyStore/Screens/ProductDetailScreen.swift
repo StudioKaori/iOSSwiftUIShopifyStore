@@ -12,21 +12,42 @@ struct ProductDetailScreen: View {
     var product:Product
     
     var body: some View {
-        VStack(alignment: .leading) {            
-            // header
-            HeaderDetailView(productTitle: product.title)
-                .padding(.horizontal)
+        ZStack {
+
+            AsyncImage(url: product.imageUrls[0], transaction: Transaction(animation: .spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.25))) { phase in
+                switch phase {
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                case .failure(_):
+                    Image(systemName: "xmark.icloud.fill").iconModifier()
+                case .empty:
+                    Image(systemName: "photo.circle.fill").iconModifier()
+                @unknown default:
+                    ProgressView()
+                }
+            }
             
-            // detail top part
-            // detail bottom part
-            // ratings sizes
-            // description
-            // quantity + favorite
-            // add to cart
-            Spacer()
-        }  //: Vstack
-        .background(Color.gray)
-        
+            VStack(alignment: .leading) {
+                // header
+                Spacer()
+                
+                HeaderDetailView(productTitle: product.title)
+                    .padding(.horizontal)
+                
+                // detail top part
+                // detail bottom part
+                // ratings sizes
+                // description
+                // quantity + favorite
+                // add to cart
+                Spacer()
+            }  //: Vstack
+
+        } //: Zstack
+        .ignoresSafeArea(.all, edges: .all)
     }
 }
 
