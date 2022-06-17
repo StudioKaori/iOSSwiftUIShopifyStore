@@ -9,13 +9,13 @@ import SwiftUI
 
 struct HomeScreen: View {
     // MARK: - property
-    @StateObject var shopInfoViewModel: ShopInfoViewModel = ShopInfoViewModel()
+//    @StateObject var shopInfoViewModel: ShopInfoViewModel = ShopInfoViewModel()
 
     // MARK: - Body
     var body: some View {
         NavigationView {
             
-            ZStack {
+            ZStack(alignment: .top) {
                 
                 PlayerView()
                     .frame(width: UIScreen.main.bounds.width)
@@ -27,19 +27,48 @@ struct HomeScreen: View {
                     Text("KAORI")
                         .font(Font.logoFont(size: 88))
                     
-                    Text(shopInfoViewModel.shopInfo.name)
-                        .font(Font.logoFont(size: 18))
-                        .padding()
+                    Spacer()
                     
-                    ProductListScreen()
+                    Text("NEW LOOK")
+                        .font(Font.logoFont(size: 40))
+                    
+                    Text("Reward yourself!")
+                        .font(Font.logoFont(size: 16))
+                    
+//                    Text(shopInfoViewModel.shopInfo.name)
+//                        .font(Font.logoFont(size: 18))
+//                        .padding()
+                    
+                    //ProductListScreen()
 
                 } //: VStack
-                .onAppear{
-                    shopInfoViewModel.getShopInfo()
-                }
-            }
+//                .onAppear{
+//                    shopInfoViewModel.getShopInfo()
+//                }
+            } //: Zstack
             
-        }
+        } //: NavigationView
+        .toolbar{
+            ToolbarItemGroup(placement: .bottomBar){
+                Button(action: {}) {
+                    Image(systemName: "house")
+                }
+                .foregroundColor(Color.black)
+                
+                Spacer()
+                Button(action: {}) {
+                    Image(systemName: "magnifyingglass")
+                }
+                .foregroundColor(Color.black)
+                
+                Spacer()
+                
+                Button(action: {}) {
+                    Image(systemName: "cart")
+                }
+                .foregroundColor(Color.black)
+            }
+        } //: toolbar
     }
 }
 
