@@ -23,8 +23,6 @@ struct ProductDetailScreen: View {
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 case .failure(_):
                     Image(systemName: "xmark.icloud.fill").iconModifier()
-                case .empty:
-                    Image(systemName: "photo.circle.fill").iconModifier()
                 @unknown default:
                     ProgressView()
                 }
