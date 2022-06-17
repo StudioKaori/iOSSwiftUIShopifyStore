@@ -12,7 +12,6 @@ extension Image {
         self
             .resizable()
             .scaledToFit()
-            .cornerRadius(12)
             .padding(.vertical, 10)
     }
     
@@ -55,11 +54,11 @@ struct ProductCardView: View {
                 
                 // name
                 Text(product.title)
-                    .font(Font.custom("Futura-Medium", size: 18))
-                    //.fontWeight(.medium)
+                    .font(Font.logoFont(size: 18))
+                    .foregroundColor(.black)
                 // price
                 Text("$\(product.price)" as String)
-                    .fontWeight(.semibold)
+                    .font(Font.logoFont(size: 14))
                     .foregroundColor(.gray)
             }) //: VStack
         } //: Navigation link

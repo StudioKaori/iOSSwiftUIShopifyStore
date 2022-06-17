@@ -11,18 +11,22 @@ struct ProductListScreen: View {
     // MARK: - property
     @StateObject private var productListViewModel = ProductListViewModel()
     
+    var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 10), count: 2)
+    
     // MARK: - body
     var body: some View {
         VStack {
             ScrollView {
 
-                ForEach(productListViewModel.products) { product in
-                    ProductCardView(product: product)
-                    
+                LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(productListViewModel.products) { product in
+                        ProductCardView(product: product)
+                    }
                 }
             } //: VStack
+            .padding(.horizontal, 10)
             .onAppear{
-                productListViewModel.getProducts(numbersOfProducts: 6)
+                productListViewModel.getProducts(numbersOfProducts: 30)
             }
             
             Spacer()
