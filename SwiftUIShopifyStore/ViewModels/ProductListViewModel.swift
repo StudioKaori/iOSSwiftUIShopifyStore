@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 import MobileBuySDK
-import Combine
 
 class ProductListViewModel: ObservableObject {
     
