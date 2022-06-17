@@ -15,8 +15,7 @@ struct ProductListScreen: View {
     var body: some View {
         VStack {
             ScrollView {
-                TitleView(title: "Products")
-                
+
                 ForEach(productListViewModel.products) { product in
                     ProductCardView(product: product)
                     
@@ -29,6 +28,7 @@ struct ProductListScreen: View {
             Spacer()
             BottomMenuBarView(currentView: "ProductListScreen")
         }
+        .navigationBarTitle("Products", displayMode: .inline)
         
     }
 }

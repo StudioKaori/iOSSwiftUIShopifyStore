@@ -12,12 +12,7 @@ struct ProductDetailScreen: View {
     var product:Product
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            // navbar
-            NavigationBarDetailView()
-                .padding(.horizontal)
-                .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
-            
+        VStack(alignment: .leading) {            
             // header
             HeaderDetailView(productTitle: product.title)
                 .padding(.horizontal)
@@ -31,7 +26,6 @@ struct ProductDetailScreen: View {
             Spacer()
         }  //: Vstack
         .background(Color.gray)
-        .ignoresSafeArea(.all, edges: .all)
         
     }
 }

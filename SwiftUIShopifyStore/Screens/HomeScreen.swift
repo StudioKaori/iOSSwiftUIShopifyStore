@@ -36,6 +36,8 @@ struct HomeScreen: View {
                 BottomMenuBarView(currentView: "HomeScreen")
             } //: VStack
         } //: Zstack
+        .navigationBarTitle("Home")
+        .navigationBarHidden(true)
     }
 }
 
