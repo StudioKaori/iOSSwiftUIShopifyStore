@@ -28,6 +28,7 @@
 		43FAD93F285C82B600DE3B61 /* Cormorant.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43FAD93E285C82B600DE3B61 /* Cormorant.ttf */; };
 		43FAD941285C852A00DE3B61 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD940285C852A00DE3B61 /* HomeScreen.swift */; };
 		43FAD943285C863900DE3B61 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD942285C863900DE3B61 /* Font.swift */; };
+		43FAD947285C892E00DE3B61 /* main-s.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 43FAD946285C892E00DE3B61 /* main-s.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		43FAD93E285C82B600DE3B61 /* Cormorant.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cormorant.ttf; sourceTree = "<group>"; };
 		43FAD940285C852A00DE3B61 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		43FAD942285C863900DE3B61 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		43FAD946285C892E00DE3B61 /* main-s.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "main-s.mp4"; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,20 +93,20 @@
 		43B7EADE28449BB5007F902E /* SwiftUIShopifyStore */ = {
 			isa = PBXGroup;
 			children = (
-				43FAD93D285C80D100DE3B61 /* Info.plist */,
-				43FAD944285C863F00DE3B61 /* Extensions */,
-				43FAD93B285C7FAA00DE3B61 /* Fonts */,
 				43B7EADF28449BB5007F902E /* SwiftUIShopifyStoreApp.swift */,
+				43FAD93D285C80D100DE3B61 /* Info.plist */,
+				43B7EAED28449CEF007F902E /* apikey.plist */,
+				43B7EAF028449E23007F902E /* Helpers */,
+				43FAD944285C863F00DE3B61 /* Extensions */,
+				43FAD945285C87C800DE3B61 /* Assets */,
 				43B7EB0B28462904007F902E /* PreviewSampleObjects */,
 				43B7EAF32844FEC1007F902E /* APIs */,
-				43B7EAF028449E23007F902E /* Helpers */,
 				43B7EAFB2845D0B7007F902E /* Models */,
 				43B7EAF6284558AC007F902E /* ViewModels */,
 				43B7EB042846248D007F902E /* Views */,
 				43B7EAEF28449DFC007F902E /* Screens */,
 				43B7EAE328449BB7007F902E /* Assets.xcassets */,
 				43B7EAE528449BB7007F902E /* Preview Content */,
-				43B7EAED28449CEF007F902E /* apikey.plist */,
 			);
 			path = SwiftUIShopifyStore;
 			sourceTree = "<group>";
@@ -212,6 +214,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		43FAD945285C87C800DE3B61 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				43FAD948285C893300DE3B61 /* Videos */,
+				43FAD93B285C7FAA00DE3B61 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		43FAD948285C893300DE3B61 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				43FAD946285C892E00DE3B61 /* main-s.mp4 */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
 		8559BC584BF5C17BB0C14A00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43B7EAE728449BB7007F902E /* Preview Assets.xcassets in Resources */,
+				43FAD947285C892E00DE3B61 /* main-s.mp4 in Resources */,
 				43B7EAEE28449CEF007F902E /* apikey.plist in Resources */,
 				43FAD93F285C82B600DE3B61 /* Cormorant.ttf in Resources */,
 				43B7EAE428449BB7007F902E /* Assets.xcassets in Resources */,
