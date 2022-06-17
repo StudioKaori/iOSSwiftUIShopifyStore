@@ -14,16 +14,22 @@ struct ProductListScreen: View {
     // MARK: - body
     var body: some View {
         VStack {
-            TitleView(title: "Products")
-            
-            ForEach(productListViewModel.products) { product in
-                ProductCardView(product: product)
+            ScrollView {
+                TitleView(title: "Products")
                 
+                ForEach(productListViewModel.products) { product in
+                    ProductCardView(product: product)
+                    
+                }
+            } //: VStack
+            .onAppear{
+                productListViewModel.getProducts(numbersOfProducts: 6)
             }
-        } //: VStack
-        .onAppear{
-            productListViewModel.getProducts(numbersOfProducts: 6)
+            
+            Spacer()
+            BottomMenuBarView()
         }
+        
     }
 }
 

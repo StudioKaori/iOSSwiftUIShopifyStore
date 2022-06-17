@@ -30,6 +30,7 @@
 		43FAD943285C863900DE3B61 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD942285C863900DE3B61 /* Font.swift */; };
 		43FAD94A285C8C1F00DE3B61 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD949285C8C1F00DE3B61 /* PlayerView.swift */; };
 		43FAD94C285C8CE900DE3B61 /* main-m.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 43FAD94B285C8CE900DE3B61 /* main-m.mp4 */; };
+		43FAD950285CAB3300DE3B61 /* BottomMenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD94F285CAB3300DE3B61 /* BottomMenuBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		43FAD942285C863900DE3B61 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		43FAD949285C8C1F00DE3B61 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		43FAD94B285C8CE900DE3B61 /* main-m.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "main-m.mp4"; sourceTree = "<group>"; };
+		43FAD94F285CAB3300DE3B61 /* BottomMenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuBarView.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 				43B7EB05284624C2007F902E /* Product List */,
 				43C41B1A2858A50800525824 /* ProductDetail */,
 				43FAD949285C8C1F00DE3B61 /* PlayerView.swift */,
+				43FAD94F285CAB3300DE3B61 /* BottomMenuBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43FAD950285CAB3300DE3B61 /* BottomMenuBarView.swift in Sources */,
 				43C41B192858A4FA00525824 /* NavigationBarDetailView.swift in Sources */,
 				43B7EB032845D544007F902E /* ProductDetailScreen.swift in Sources */,
 				43B7EAE028449BB5007F902E /* SwiftUIShopifyStoreApp.swift in Sources */,

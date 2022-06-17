@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeScreen: View {
     // MARK: - property
-//    @StateObject var shopInfoViewModel: ShopInfoViewModel = ShopInfoViewModel()
 
     // MARK: - Body
     var body: some View {
@@ -35,40 +34,15 @@ struct HomeScreen: View {
                     Text("Reward yourself!")
                         .font(Font.logoFont(size: 16))
                     
-//                    Text(shopInfoViewModel.shopInfo.name)
-//                        .font(Font.logoFont(size: 18))
-//                        .padding()
+                    Spacer()
                     
-                    //ProductListScreen()
+                    BottomMenuBarView()
+                        
 
                 } //: VStack
-//                .onAppear{
-//                    shopInfoViewModel.getShopInfo()
-//                }
             } //: Zstack
-            
         } //: NavigationView
-        .toolbar{
-            ToolbarItemGroup(placement: .bottomBar){
-                Button(action: {}) {
-                    Image(systemName: "house")
-                }
-                .foregroundColor(Color.black)
-                
-                Spacer()
-                Button(action: {}) {
-                    Image(systemName: "magnifyingglass")
-                }
-                .foregroundColor(Color.black)
-                
-                Spacer()
-                
-                Button(action: {}) {
-                    Image(systemName: "cart")
-                }
-                .foregroundColor(Color.black)
-            }
-        } //: toolbar
+        
     }
 }
 
