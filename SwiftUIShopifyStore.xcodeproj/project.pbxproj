@@ -26,6 +26,7 @@
 		43B7EB0D2846292B007F902E /* PreviewSampleObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EB0C2846292B007F902E /* PreviewSampleObjects.swift */; };
 		43C41B192858A4FA00525824 /* NavigationBarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C41B182858A4FA00525824 /* NavigationBarDetailView.swift */; };
 		43C41B1C2858B7E300525824 /* HeaderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C41B1B2858B7E300525824 /* HeaderDetailView.swift */; };
+		43FAD93F285C82B600DE3B61 /* Cormorant.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43FAD93E285C82B600DE3B61 /* Cormorant.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		43B7EB0C2846292B007F902E /* PreviewSampleObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleObjects.swift; sourceTree = "<group>"; };
 		43C41B182858A4FA00525824 /* NavigationBarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDetailView.swift; sourceTree = "<group>"; };
 		43C41B1B2858B7E300525824 /* HeaderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDetailView.swift; sourceTree = "<group>"; };
+		43FAD93D285C80D100DE3B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		43FAD93E285C82B600DE3B61 /* Cormorant.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cormorant.ttf; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +89,8 @@
 		43B7EADE28449BB5007F902E /* SwiftUIShopifyStore */ = {
 			isa = PBXGroup;
 			children = (
+				43FAD93D285C80D100DE3B61 /* Info.plist */,
+				43FAD93B285C7FAA00DE3B61 /* Fonts */,
 				43B7EADF28449BB5007F902E /* SwiftUIShopifyStoreApp.swift */,
 				43B7EB0B28462904007F902E /* PreviewSampleObjects */,
 				43B7EAF32844FEC1007F902E /* APIs */,
@@ -188,6 +193,14 @@
 			path = ProductDetail;
 			sourceTree = "<group>";
 		};
+		43FAD93B285C7FAA00DE3B61 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				43FAD93E285C82B600DE3B61 /* Cormorant.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		8559BC584BF5C17BB0C14A00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +280,7 @@
 			files = (
 				43B7EAE728449BB7007F902E /* Preview Assets.xcassets in Resources */,
 				43B7EAEE28449CEF007F902E /* apikey.plist in Resources */,
+				43FAD93F285C82B600DE3B61 /* Cormorant.ttf in Resources */,
 				43B7EAE428449BB7007F902E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +481,7 @@
 				DEVELOPMENT_TEAM = LW3THBZ2Y7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIShopifyStore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -497,6 +512,7 @@
 				DEVELOPMENT_TEAM = LW3THBZ2Y7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIShopifyStore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

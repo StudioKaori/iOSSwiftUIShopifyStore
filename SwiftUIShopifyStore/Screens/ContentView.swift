@@ -14,7 +14,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Text("KAORI")
+                    .font(.custom("Cormorant Infant", size: 88))
+                
                 Text(shopInfoViewModel.shopInfo.name)
+                    .font(.custom("Cormorant Infant", size: 18))
                     .padding()
                 
                 ProductListScreen()
