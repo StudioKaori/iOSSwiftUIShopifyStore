@@ -16,15 +16,11 @@ struct HomeScreen: View {
         NavigationView {
             
             ZStack {
-                GeometryReader{ geo in
-                    PlayerView()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: geo.size.width, height: geo.size.height+100)
-                        .edgesIgnoringSafeArea(.all)
-                        .overlay(Color.black.opacity(0.2))
-                        .blur(radius: 1)
-                        .edgesIgnoringSafeArea(.all)
-                }  //: video
+                
+                PlayerView()
+                    .frame(width: UIScreen.main.bounds.width)
+                    .edgesIgnoringSafeArea(.all)
+
                 
                 VStack {
 
