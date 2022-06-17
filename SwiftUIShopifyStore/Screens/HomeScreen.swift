@@ -9,40 +9,33 @@ import SwiftUI
 
 struct HomeScreen: View {
     // MARK: - property
-
+    
     // MARK: - Body
     var body: some View {
-        NavigationView {
+        ZStack(alignment: .top) {
+            PlayerView()
+                .frame(width: UIScreen.main.bounds.width)
+                .edgesIgnoringSafeArea(.all)
             
-            ZStack(alignment: .top) {
+            
+            VStack {
                 
-                PlayerView()
-                    .frame(width: UIScreen.main.bounds.width)
-                    .edgesIgnoringSafeArea(.all)
-
+                Text("KAORI")
+                    .font(Font.logoFont(size: 88))
                 
-                VStack {
-
-                    Text("KAORI")
-                        .font(Font.logoFont(size: 88))
-                    
-                    Spacer()
-                    
-                    Text("NEW LOOK")
-                        .font(Font.logoFont(size: 40))
-                    
-                    Text("Reward yourself!")
-                        .font(Font.logoFont(size: 16))
-                    
-                    Spacer()
-                    
-                    BottomMenuBarView()
-                        
-
-                } //: VStack
-            } //: Zstack
-        } //: NavigationView
-        
+                Spacer()
+                
+                Text("NEW LOOK")
+                    .font(Font.logoFont(size: 40))
+                
+                Text("Reward yourself!")
+                    .font(Font.logoFont(size: 16))
+                
+                Spacer()
+                
+                BottomMenuBarView(currentView: "HomeScreen")
+            } //: VStack
+        } //: Zstack
     }
 }
 

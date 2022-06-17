@@ -27,7 +27,7 @@ struct ProductListScreen: View {
             }
             
             Spacer()
-            BottomMenuBarView()
+            BottomMenuBarView(currentView: "ProductListScreen")
         }
         
     }

@@ -11,7 +11,9 @@ import SwiftUI
 struct SwiftUIShopifyStoreApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeScreen()
+            NavigationView {
+                HomeScreen()
+            }
         }
     }
 }

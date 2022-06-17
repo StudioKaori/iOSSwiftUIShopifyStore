@@ -29,7 +29,6 @@ extension Image {
 
 struct ProductCardView: View {
     // MARK: - Property
-    
     let product: Product
     
     // MARK: - Body
