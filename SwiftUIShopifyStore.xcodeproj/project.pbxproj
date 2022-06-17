@@ -27,6 +27,7 @@
 		43C41B1C2858B7E300525824 /* HeaderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C41B1B2858B7E300525824 /* HeaderDetailView.swift */; };
 		43FAD93F285C82B600DE3B61 /* Cormorant.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43FAD93E285C82B600DE3B61 /* Cormorant.ttf */; };
 		43FAD941285C852A00DE3B61 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD940285C852A00DE3B61 /* HomeScreen.swift */; };
+		43FAD943285C863900DE3B61 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD942285C863900DE3B61 /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		43FAD93D285C80D100DE3B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		43FAD93E285C82B600DE3B61 /* Cormorant.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cormorant.ttf; sourceTree = "<group>"; };
 		43FAD940285C852A00DE3B61 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		43FAD942285C863900DE3B61 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				43FAD93D285C80D100DE3B61 /* Info.plist */,
+				43FAD944285C863F00DE3B61 /* Extensions */,
 				43FAD93B285C7FAA00DE3B61 /* Fonts */,
 				43B7EADF28449BB5007F902E /* SwiftUIShopifyStoreApp.swift */,
 				43B7EB0B28462904007F902E /* PreviewSampleObjects */,
@@ -199,6 +202,14 @@
 				43FAD93E285C82B600DE3B61 /* Cormorant.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		43FAD944285C863F00DE3B61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				43FAD942285C863900DE3B61 /* Font.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8559BC584BF5C17BB0C14A00 /* Frameworks */ = {
@@ -346,6 +357,7 @@
 				43B7EAF8284558D3007F902E /* ShopInfoViewModel.swift in Sources */,
 				43B7EAF52844FECD007F902E /* ShopifyClient.swift in Sources */,
 				43B7EB082846250C007F902E /* TitleView.swift in Sources */,
+				43FAD943285C863900DE3B61 /* Font.swift in Sources */,
 				43B7EB0D2846292B007F902E /* PreviewSampleObjects.swift in Sources */,
 				43B7EAFD2845D0CD007F902E /* Product.swift in Sources */,
 				43B7EAFF2845D11C007F902E /* ShopInfo.swift in Sources */,

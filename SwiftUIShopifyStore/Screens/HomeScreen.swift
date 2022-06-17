@@ -16,10 +16,10 @@ struct HomeScreen: View {
         NavigationView {
             VStack {
                 Text("KAORI")
-                    .font(.custom("Cormorant Infant", size: 88))
+                    .font(Font.logoFont(size: 88))
                 
                 Text(shopInfoViewModel.shopInfo.name)
-                    .font(.custom("Cormorant Infant", size: 18))
+                    .font(Font.logoFont(size: 18))
                     .padding()
                 
                 ProductListScreen()
