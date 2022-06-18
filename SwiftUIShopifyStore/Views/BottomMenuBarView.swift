@@ -10,7 +10,11 @@ import SwiftUI
 struct BottomMenuBarView: View {
     // MARK: - Property
     @Environment(\.presentationMode) var presentationMode
+    
     let currentView: String
+    
+    @EnvironmentObject var cartItems: CartItems
+    
     
     // MARK: - Body
     var body: some View {
@@ -50,13 +54,28 @@ struct BottomMenuBarView: View {
             Spacer()
 
             if currentView != "CartScreen" {
-                NavigationLink(destination: Text("Cart")) {
+                NavigationLink(destination: CartScreen()) {
                     Image(systemName: "cart")
                     .foregroundColor(Color.black)
+                    .overlay(
+                        
+                        ZStack {
+                            Circle()
+                                .foregroundColor(.black)
+                            
+                            Text("\(cartItems.getTotalNumbersOfItems())")
+                            //Text("0")
+                                .foregroundColor(.gray)
+                                .font(.footnote)
+                        }
+                            .offset(x: 10, y: -10)
+                        
+                    )
                 }
             } else {
                 Image(systemName: "cart")
                 .foregroundColor(Color.black)
+                .overlay(Text("3"))
             }
 
             Spacer()

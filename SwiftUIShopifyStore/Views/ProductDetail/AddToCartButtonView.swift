@@ -19,7 +19,7 @@ struct AddToCartButtonView: View {
 //            for (key,value) in cartItems.cartItems {
 //                print("\(key)は\(value)円です。")
 //            }
-            print("Cart items: \(cartItems.cartItems)")
+
         }, label: {
           Spacer()
           Text("Add to cart".uppercased())

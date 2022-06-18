@@ -35,6 +35,7 @@
 		43FAD956285E2F0F00DE3B61 /* AddToCartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD955285E2F0F00DE3B61 /* AddToCartButtonView.swift */; };
 		43FAD958285E5C5400DE3B61 /* ProductDetailDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD957285E5C5400DE3B61 /* ProductDetailDrawerView.swift */; };
 		43FAD95C285E616300DE3B61 /* CartItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD95B285E616300DE3B61 /* CartItems.swift */; };
+		43FAD95E285E6D8400DE3B61 /* CartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD95D285E6D8400DE3B61 /* CartScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		43FAD955285E2F0F00DE3B61 /* AddToCartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartButtonView.swift; sourceTree = "<group>"; };
 		43FAD957285E5C5400DE3B61 /* ProductDetailDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailDrawerView.swift; sourceTree = "<group>"; };
 		43FAD95B285E616300DE3B61 /* CartItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItems.swift; sourceTree = "<group>"; };
+		43FAD95D285E6D8400DE3B61 /* CartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreen.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 				43FAD940285C852A00DE3B61 /* HomeScreen.swift */,
 				43B7EB002845D3B6007F902E /* ProductListScreen.swift */,
 				43B7EB022845D544007F902E /* ProductDetailScreen.swift */,
+				43FAD95D285E6D8400DE3B61 /* CartScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43FAD950285CAB3300DE3B61 /* BottomMenuBarView.swift in Sources */,
+				43FAD95E285E6D8400DE3B61 /* CartScreen.swift in Sources */,
 				43C41B192858A4FA00525824 /* NavigationBarDetailView.swift in Sources */,
 				43B7EB032845D544007F902E /* ProductDetailScreen.swift in Sources */,
 				43B7EAE028449BB5007F902E /* SwiftUIShopifyStoreApp.swift in Sources */,

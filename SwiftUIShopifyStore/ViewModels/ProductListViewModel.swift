@@ -78,7 +78,7 @@ class ProductListViewModel: ObservableObject {
                 )
                 products.append(product)
             }
-            print("Product View Model : \(products)")
+            //print("Product View Model : \(products)")
             self?.products = products
         }
         productsTask.resume()
