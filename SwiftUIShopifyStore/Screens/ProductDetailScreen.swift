@@ -17,100 +17,109 @@ struct ProductDetailScreen: View {
     
     // MARK: - Body
     var body: some View {
-        VStack {
-            ZStack(alignment: .top) {
-                
-                // Product images
-                TabView {
-                    ForEach(product.imageUrls, id: \.self) { imageUrl in
-                        URLImage(url: imageUrl)
+        ZStack {
+            Color.clear
+            
+            VStack {
+                ZStack(alignment: .top) {
+                    
+                    // Product images
+                    TabView {
+                        ForEach(product.imageUrls, id: \.self) { imageUrl in
+                            URLImage(url: imageUrl)
+                        }
                     }
-                }
-                .frame(height: UIScreen.main.bounds.height - 150)
-                .tabViewStyle(PageTabViewStyle())
-                .indexViewStyle(.page(backgroundDisplayMode: .always))
-                
-                
-                
-                VStack(alignment: .leading) {
+                    .frame(height: UIScreen.main.bounds.height - 300)
+                    .tabViewStyle(PageTabViewStyle())
+                    .indexViewStyle(.page(backgroundDisplayMode: .always))
                     
-                    // header
                     
-                    HeaderDetailView(productTitle: product.title)
-                        .padding(.top, 100)
                     
-                }  //: Vstack
-                
-            } //: Zstack
-            .ignoresSafeArea(.all, edges: .all)
-            .onAppear {
-                isAnimating = true
-            }
-            // MARK: - Drawer
-            .overlay(alignment: .top) {
-                
-                ZStack {
-                    // To occupy the space
-                    Color.clear
-                    
-                    VStack(spacing: 12) {
-                        // drawer handle
-                        Image(systemName: isDrawerOpen ?  "chevron.compact.down" : "chevron.compact.up")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20)
-                            .padding(4)
-                            .foregroundStyle(.secondary)
-                            .onTapGesture(perform: {
-                                withAnimation(.easeOut) {
-                                    isDrawerOpen.toggle()
-                                }
-                            })
+                    VStack(alignment: .leading) {
                         
-                        HStack {
-                            Text(product.title)
-                                .foregroundColor(.black)
-                                .font(.logoFont(size: 18))
+                        // header
+                        
+                        HeaderDetailView(productTitle: product.title)
+                            .padding(.top, 100)
+                        
+                    }  //: Vstack
+                    
+                } //: Zstack
+                .ignoresSafeArea(.all, edges: .all)
+                .onAppear {
+                    isAnimating = true
+                }
+                // MARK: - Drawer
+                .overlay(alignment: .top) {
+                    
+                    ZStack {
+                        // To occupy the space
+                        Color.clear
+                        
+                        VStack(spacing: 12) {
+                            // drawer handle
+                            Image(systemName: isDrawerOpen ?  "chevron.compact.down" : "chevron.compact.up")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                                .padding(4)
+                                .foregroundStyle(.secondary)
+                                .onTapGesture(perform: {
+                                    withAnimation(.easeOut) {
+                                        isDrawerOpen.toggle()
+                                    }
+                                })
+                            
+                            HStack {
+                                Text(product.title)
+                                    .foregroundColor(.black)
+                                    .font(.logoFont(size: 18))
+                                
+                                Spacer()
+                                
+                                Text("$\(product.price)" as String)
+                                    .foregroundColor(.black)
+                                    .font(.logoFont(size: 14))
+                            }
+                            .padding(.horizontal,6)
+                            
+                            
+                            AddToCartButtonView()
+                                .padding(.bottom, 30)
+                            
+                            if isDrawerOpen {
+                                VStack {
+                                    Divider()
+                                    Text("Product details:")
+                                    Text(product.description)
+                                }
+                            }
                             
                             Spacer()
                             
-                            Text("$\(product.price)" as String)
-                                .foregroundColor(.black)
-                                .font(.logoFont(size: 14))
                         }
-                        .padding(.horizontal,6)
-                        
-                        
-                        AddToCartButtonView()
-                            .padding(.bottom, 30)
-                        
-                        if isDrawerOpen {
-                            VStack {
-                                Divider()
-                                Text("Product details:")
-                                Text(product.description)
-                            }
-                        }
-
-                        Spacer()
-                        
                     }
-                }
-                .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
-                .background(.ultraThinMaterial)
-                .cornerRadius(12)
-                .opacity(isAnimating ? 1 : 0)
-                .frame(width: UIScreen.main.bounds.width)
-                .offset(y: isDrawerOpen ? 20 : UIScreen.main.bounds.height - 300)
-                //: Vstack
+                    .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(12)
+                    .opacity(isAnimating ? 1 : 0)
+                    .frame(width: UIScreen.main.bounds.width)
+                    .offset(y: isDrawerOpen ? 20 : UIScreen.main.bounds.height - 380)
+                    //: Vstack
+
+                } //: drawer
                 
                 
-            } //: drawer
+            }  //: VStack
             
-            BottomMenuBarView(currentView: "ProductDetailScreen")
-        }  //: VStack
+        }
+        .overlay(alignment: .bottom, content: {
+            BottomMenuBarView(currentView: "")
+        })
+        
         
     }
+    
 }
 
 struct ProductDetailScreen_Previews: PreviewProvider {
