@@ -19,17 +19,16 @@ struct ProductDetailScreen: View {
     var body: some View {
         ZStack {
             
+            // Product images
             TabView {
                 ForEach(product.imageUrls, id: \.self) { imageUrl in
                     URLImage(url: imageUrl)
                 }
             }
-            .tabViewStyle(.page)
-            .indexViewStyle(.page(backgroundDisplayMode: .always))
+            .tabViewStyle(PageTabViewStyle())
+            //.indexViewStyle(.page(backgroundDisplayMode: .always))
             
-            
-            
-            
+
             VStack(alignment: .leading) {
                 
                 // header
@@ -46,42 +45,50 @@ struct ProductDetailScreen: View {
                 // add to cart
                 Spacer()
             }  //: Vstack
-                     
+            
         } //: Zstack
         .ignoresSafeArea(.all, edges: .all)
         .onAppear {
             isAnimating = true
         }
         // MARK: - Drawer
-        .overlay(alignment: .bottom) {
-            VStack(spacing: 12) {
-                // drawer handle
-                Image(systemName: isDrawerOpen ?  "chevron.compact.down" : "chevron.compact.up")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 40)
-                    .padding(8)
-                    .foregroundStyle(.secondary)
-                    .onTapGesture(perform: {
-                        withAnimation(.easeOut) {
-                            isDrawerOpen.toggle()
-                        }
-                    })
+        .overlay(alignment: .top) {
+            
+            ZStack {
+                // To occupy the space
+                Color.clear
                 
-                
-                Spacer()
-
-                
-                
+                VStack(spacing: 12) {
+                    // drawer handle
+                    Image(systemName: isDrawerOpen ?  "chevron.compact.down" : "chevron.compact.up")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40)
+                        .padding(8)
+                        .foregroundStyle(.secondary)
+                        .onTapGesture(perform: {
+                            withAnimation(.easeOut) {
+                                isDrawerOpen.toggle()
+                            }
+                        })
+                    
+                    Text("Product detail")
+                        .foregroundColor(.black)
+                    
+                    Spacer()
+                    
+                }
             }
-                .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
-                .background(.ultraThinMaterial)
-                .cornerRadius(12)
-                .opacity(isAnimating ? 1 : 0)
-                .frame(width: UIScreen.main.bounds.width)
-                .offset(y: isDrawerOpen ? 100 : 215)
-        }
-            //: drawer
+            .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
+            .background(.ultraThinMaterial)
+            .cornerRadius(12)
+            .opacity(isAnimating ? 1 : 0)
+            .frame(width: UIScreen.main.bounds.width)
+            .offset(y: isDrawerOpen ? 20 : UIScreen.main.bounds.height - 200)
+            //: Vstack
+            
+            
+        } //: drawer
         
     }
 }
