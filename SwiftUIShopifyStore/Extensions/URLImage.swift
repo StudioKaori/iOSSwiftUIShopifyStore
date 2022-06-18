@@ -22,7 +22,8 @@ struct URLImage: View {
         }else {
             Image("Logo")
                 .resizable()
-                .frame(width: 400, height: 400)
+                .scaledToFit()
+                .frame(maxWidth: 250, maxHeight: 250)
                 .foregroundColor(.gray)
                 .onAppear {
                     fetchData()
