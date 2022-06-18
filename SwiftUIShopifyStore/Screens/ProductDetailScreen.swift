@@ -10,7 +10,12 @@ import SwiftUI
 struct ProductDetailScreen: View {
     // MARK: - Property
     var product:Product
+    // For drawer
+    @State private var isAnimating: Bool = false
+    @State private var isDrawerOpen: Bool = false
     
+    
+    // MARK: - Body
     var body: some View {
         ZStack {
             
@@ -41,9 +46,42 @@ struct ProductDetailScreen: View {
                 // add to cart
                 Spacer()
             }  //: Vstack
-            
+                     
         } //: Zstack
         .ignoresSafeArea(.all, edges: .all)
+        .onAppear {
+            isAnimating = true
+        }
+        // MARK: - Drawer
+        .overlay(alignment: .bottom) {
+            VStack(spacing: 12) {
+                // drawer handle
+                Image(systemName: isDrawerOpen ?  "chevron.compact.down" : "chevron.compact.up")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40)
+                    .padding(8)
+                    .foregroundStyle(.secondary)
+                    .onTapGesture(perform: {
+                        withAnimation(.easeOut) {
+                            isDrawerOpen.toggle()
+                        }
+                    })
+                
+                
+                Spacer()
+
+                
+                
+            }
+                .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
+                .background(.ultraThinMaterial)
+                .cornerRadius(12)
+                .opacity(isAnimating ? 1 : 0)
+                .frame(width: UIScreen.main.bounds.width)
+                .offset(y: isDrawerOpen ? 100 : 215)
+        }
+            //: drawer
         
     }
 }
