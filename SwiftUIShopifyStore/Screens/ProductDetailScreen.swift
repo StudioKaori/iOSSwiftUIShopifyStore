@@ -17,7 +17,7 @@ struct ProductDetailScreen: View {
     
     // MARK: - Body
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             
             // Product images
             TabView {
@@ -25,8 +25,10 @@ struct ProductDetailScreen: View {
                     URLImage(url: imageUrl)
                 }
             }
+            .frame(height: UIScreen.main.bounds.height - 150)
             .tabViewStyle(PageTabViewStyle())
-            //.indexViewStyle(.page(backgroundDisplayMode: .always))
+            .indexViewStyle(.page(backgroundDisplayMode: .always))
+            
             
 
             VStack(alignment: .leading) {
