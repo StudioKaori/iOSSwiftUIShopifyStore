@@ -20,9 +20,9 @@ struct URLImage: View {
                 .aspectRatio(contentMode: .fill)
             
         }else {
-            Image(systemName: "photo")
+            Image("Logo")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .frame(width: 400, height: 400)
                 .foregroundColor(.gray)
                 .onAppear {
                     fetchData()
