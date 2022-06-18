@@ -17,80 +17,77 @@ struct ProductDetailScreen: View {
     
     // MARK: - Body
     var body: some View {
-        ZStack(alignment: .top) {
-            
-            // Product images
-            TabView {
-                ForEach(product.imageUrls, id: \.self) { imageUrl in
-                    URLImage(url: imageUrl)
+        VStack {
+            ZStack(alignment: .top) {
+                
+                // Product images
+                TabView {
+                    ForEach(product.imageUrls, id: \.self) { imageUrl in
+                        URLImage(url: imageUrl)
+                    }
                 }
+                .frame(height: UIScreen.main.bounds.height - 150)
+                .tabViewStyle(PageTabViewStyle())
+                .indexViewStyle(.page(backgroundDisplayMode: .always))
+                
+                
+                
+                VStack(alignment: .leading) {
+                    
+                    // header
+                    
+                    HeaderDetailView(productTitle: product.title)
+                        .padding(.top, 100)
+                    
+                }  //: Vstack
+                
+            } //: Zstack
+            .ignoresSafeArea(.all, edges: .all)
+            .onAppear {
+                isAnimating = true
             }
-            .frame(height: UIScreen.main.bounds.height - 150)
-            .tabViewStyle(PageTabViewStyle())
-            .indexViewStyle(.page(backgroundDisplayMode: .always))
-            
-            
-
-            VStack(alignment: .leading) {
+            // MARK: - Drawer
+            .overlay(alignment: .top) {
                 
-                // header
-                Spacer()
-                
-                HeaderDetailView(productTitle: product.title)
-                    .padding(.horizontal)
-                
-                // detail top part
-                // detail bottom part
-                // ratings sizes
-                // description
-                // quantity + favorite
-                // add to cart
-                Spacer()
-            }  //: Vstack
-            
-        } //: Zstack
-        .ignoresSafeArea(.all, edges: .all)
-        .onAppear {
-            isAnimating = true
-        }
-        // MARK: - Drawer
-        .overlay(alignment: .top) {
-            
-            ZStack {
-                // To occupy the space
-                Color.clear
-                
-                VStack(spacing: 12) {
-                    // drawer handle
-                    Image(systemName: isDrawerOpen ?  "chevron.compact.down" : "chevron.compact.up")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 40)
-                        .padding(8)
-                        .foregroundStyle(.secondary)
-                        .onTapGesture(perform: {
-                            withAnimation(.easeOut) {
-                                isDrawerOpen.toggle()
-                            }
-                        })
+                ZStack {
+                    // To occupy the space
+                    Color.clear
                     
-                    Text("Product detail")
-                        .foregroundColor(.black)
-                    
-                    Spacer()
-                    
+                    VStack(spacing: 12) {
+                        // drawer handle
+                        Image(systemName: isDrawerOpen ?  "chevron.compact.down" : "chevron.compact.up")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20)
+                            .padding(8)
+                            .foregroundStyle(.secondary)
+                            .onTapGesture(perform: {
+                                withAnimation(.easeOut) {
+                                    isDrawerOpen.toggle()
+                                }
+                            })
+                        
+                        Text("Product detail")
+                            .foregroundColor(.black)
+                            .font(.logoFont(size: 18))
+                        
+                        Spacer()
+                        
+                    }
                 }
-            }
-            .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
-            .background(.ultraThinMaterial)
-            .cornerRadius(12)
-            .opacity(isAnimating ? 1 : 0)
-            .frame(width: UIScreen.main.bounds.width)
-            .offset(y: isDrawerOpen ? 20 : UIScreen.main.bounds.height - 200)
-            //: Vstack
+                .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
+                .background(.ultraThinMaterial)
+                .cornerRadius(12)
+                .opacity(isAnimating ? 1 : 0)
+                .frame(width: UIScreen.main.bounds.width)
+                .offset(y: isDrawerOpen ? 20 : UIScreen.main.bounds.height - 300)
+                //: Vstack
+                
+                
+            } //: drawer
             
-            
-        } //: drawer
+            BottomMenuBarView(currentView: "ProductDetailScreen")
+        }  //: VStack
         
     }
 }

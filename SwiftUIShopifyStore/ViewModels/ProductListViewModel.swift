@@ -20,6 +20,7 @@ class ProductListViewModel: ObservableObject {
         // products information
         // https://shopify.dev/api/storefront/2022-04/queries/products
         // product field : https://shopify.dev/api/storefront/2022-04/objects/Product#fields
+        // buy sdk: https://github.com/Shopify/mobile-buy-sdk-ios/
         let productsQuery = Storefront.buildQuery { $0
             .products(first: numbersOfProducts) { $0
                 .edges { $0
