@@ -13,32 +13,19 @@ struct ProductDetailScreen: View {
     
     var body: some View {
         ZStack {
-
             
-            AsyncImage(url: product.imageUrls[0], transaction: Transaction(animation: .spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.25))) { phase in
-                switch phase {
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                case .failure(_):
-                    Image(systemName: "xmark.icloud.fill").iconModifier()
-                case .empty:
-                    Image(systemName: "xmark.icloud.fill").iconModifier()
-                @unknown default:
-                    ProgressView()
+            TabView {
+                ForEach(product.imageUrls, id: \.self) { imageUrl in
+                    URLImage(url: imageUrl)
                 }
             }
+            .tabViewStyle(.page)
+            .indexViewStyle(.page(backgroundDisplayMode: .always))
+            
+            
+            
             
             VStack(alignment: .leading) {
-                TabView {
-                    Text("Hello1")
-                    Text("Hello2")
-                    Text("Hello3")
-                            }
-                .tabViewStyle(.page)
-                        .indexViewStyle(.page(backgroundDisplayMode: .always))
                 
                 // header
                 Spacer()
@@ -54,9 +41,10 @@ struct ProductDetailScreen: View {
                 // add to cart
                 Spacer()
             }  //: Vstack
-
+            
         } //: Zstack
         .ignoresSafeArea(.all, edges: .all)
+        
     }
 }
 
