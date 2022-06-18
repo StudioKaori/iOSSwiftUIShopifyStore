@@ -43,11 +43,9 @@ struct ProductDetailScreen: View {
         }
         // MARK: - Drawer
         .overlay(alignment: .top) {
-            
             ProductDetailDrawerView(product: product, isDrawerOpen: $isDrawerOpen, isAnimating: $isAnimating)
-
-            
-        } //: drawer
+        }
+        // MARK: - Bottom menu
         .overlay(alignment: .bottom, content: {
             BottomMenuBarView(currentView: "")
         })
