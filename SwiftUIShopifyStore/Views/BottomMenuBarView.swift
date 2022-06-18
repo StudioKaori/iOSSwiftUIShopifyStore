@@ -52,7 +52,7 @@ struct BottomMenuBarView: View {
 
             Spacer()
             
-        } //: bottom menu
+        } //: Hstack
     }
 }
 

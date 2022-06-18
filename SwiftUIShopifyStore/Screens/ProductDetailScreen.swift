@@ -59,7 +59,7 @@ struct ProductDetailScreen: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20)
-                            .padding(8)
+                            .padding(4)
                             .foregroundStyle(.secondary)
                             .onTapGesture(perform: {
                                 withAnimation(.easeOut) {
@@ -67,10 +67,31 @@ struct ProductDetailScreen: View {
                                 }
                             })
                         
-                        Text("Product detail")
-                            .foregroundColor(.black)
-                            .font(.logoFont(size: 18))
+                        HStack {
+                            Text(product.title)
+                                .foregroundColor(.black)
+                                .font(.logoFont(size: 18))
+                            
+                            Spacer()
+                            
+                            Text("$\(product.price)" as String)
+                                .foregroundColor(.black)
+                                .font(.logoFont(size: 14))
+                        }
+                        .padding(.horizontal,6)
                         
+                        
+                        AddToCartButtonView()
+                            .padding(.bottom, 30)
+                        
+                        if isDrawerOpen {
+                            VStack {
+                                Divider()
+                                Text("Product details:")
+                                Text(product.description)
+                            }
+                        }
+
                         Spacer()
                         
                     }
