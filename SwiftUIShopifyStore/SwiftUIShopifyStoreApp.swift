@@ -14,6 +14,7 @@ struct SwiftUIShopifyStoreApp: App {
             NavigationView {
                 HomeScreen()
             }
+            .environmentObject(CartItems())
         }
     }
 }

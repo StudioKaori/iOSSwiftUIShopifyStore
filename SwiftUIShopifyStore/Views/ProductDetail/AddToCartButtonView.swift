@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct AddToCartButtonView: View {
+    // MARK: - Property
+    @EnvironmentObject var cartItems: CartItems
+    let product: Product
+    
+    // MARK: - Body
     var body: some View {
         Button(action: {
-            
+            cartItems.cartItems.updateValue(1, forKey: product)
+//            for (key,value) in cartItems.cartItems {
+//                print("\(key)は\(value)円です。")
+//            }
+            print("Cart items: \(cartItems.cartItems)")
         }, label: {
           Spacer()
           Text("Add to cart".uppercased())
@@ -25,8 +34,8 @@ struct AddToCartButtonView: View {
     }
 }
 
-struct AddToCartButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddToCartButtonView()
-    }
-}
+//struct AddToCartButtonView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddToCartButtonView()
+//    }
+//}

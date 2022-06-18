@@ -47,7 +47,7 @@ struct ProductDetailDrawerView: View {
                 .padding(.horizontal,6)
                 
                 
-                AddToCartButtonView()
+                AddToCartButtonView(product: product)
                     .padding(.bottom, 30)
                 
                 if isDrawerOpen {
