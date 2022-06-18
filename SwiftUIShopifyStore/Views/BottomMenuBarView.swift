@@ -9,12 +9,21 @@ import SwiftUI
 
 struct BottomMenuBarView: View {
     // MARK: - Property
+    @Environment(\.presentationMode) var presentationMode
     let currentView: String
     
     // MARK: - Body
     var body: some View {
         HStack {
             Spacer()
+            
+            if currentView != "HomeScreen" {
+                Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                    Image(systemName: "arrow.left")
+                    .foregroundColor(Color.black)
+                }
+                Spacer()
+            }
             
             if currentView != "HomeScreen" {
                 NavigationLink(destination: HomeScreen()) {

@@ -17,105 +17,93 @@ struct ProductDetailScreen: View {
     
     // MARK: - Body
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             Color.clear
             
-            VStack {
-                ZStack(alignment: .top) {
-                    
-                    // Product images
-                    TabView {
-                        ForEach(product.imageUrls, id: \.self) { imageUrl in
-                            URLImage(url: imageUrl)
-                        }
-                    }
-                    .frame(height: UIScreen.main.bounds.height - 300)
-                    .tabViewStyle(PageTabViewStyle())
-                    .indexViewStyle(.page(backgroundDisplayMode: .always))
-                    
-                    
-                    
-                    VStack(alignment: .leading) {
-                        
-                        // header
-                        
-                        HeaderDetailView(productTitle: product.title)
-                            .padding(.top, 100)
-                        
-                    }  //: Vstack
-                    
-                } //: Zstack
-                .ignoresSafeArea(.all, edges: .all)
-                .onAppear {
-                    isAnimating = true
+            // Product images
+            TabView {
+                ForEach(product.imageUrls, id: \.self) { imageUrl in
+                    URLImage(url: imageUrl)
                 }
-                // MARK: - Drawer
-                .overlay(alignment: .top) {
+            }
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200, alignment: .top)
+            .padding(0)
+            .tabViewStyle(PageTabViewStyle())
+            .indexViewStyle(.page(backgroundDisplayMode: .always))
+            
+            // header
+            HeaderDetailView(productTitle: product.title)
+                .padding(.top, 80)
+               
+            
+        }  //: Zstack
+        .ignoresSafeArea(.all, edges: .all)
+        .onAppear {
+            isAnimating = true
+        }
+        // MARK: - Drawer
+        .overlay(alignment: .top) {
+            
+            ZStack {
+                // To occupy the space
+                Color.clear
+                
+                VStack(spacing: 12) {
+                    // drawer handle
+                    Image(systemName: isDrawerOpen ?  "chevron.compact.down" : "chevron.compact.up")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20)
+                        .padding(4)
+                        .foregroundStyle(.secondary)
+                        .onTapGesture(perform: {
+                            withAnimation(.easeOut) {
+                                isDrawerOpen.toggle()
+                            }
+                        })
                     
-                    ZStack {
-                        // To occupy the space
-                        Color.clear
+                    HStack {
+                        Text(product.title)
+                            .foregroundColor(.black)
+                            .font(.logoFont(size: 18))
                         
-                        VStack(spacing: 12) {
-                            // drawer handle
-                            Image(systemName: isDrawerOpen ?  "chevron.compact.down" : "chevron.compact.up")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20)
-                                .padding(4)
-                                .foregroundStyle(.secondary)
-                                .onTapGesture(perform: {
-                                    withAnimation(.easeOut) {
-                                        isDrawerOpen.toggle()
-                                    }
-                                })
-                            
-                            HStack {
-                                Text(product.title)
-                                    .foregroundColor(.black)
-                                    .font(.logoFont(size: 18))
-                                
-                                Spacer()
-                                
-                                Text("$\(product.price)" as String)
-                                    .foregroundColor(.black)
-                                    .font(.logoFont(size: 14))
-                            }
-                            .padding(.horizontal,6)
-                            
-                            
-                            AddToCartButtonView()
-                                .padding(.bottom, 30)
-                            
-                            if isDrawerOpen {
-                                VStack {
-                                    Divider()
-                                    Text("Product details:")
-                                    Text(product.description)
-                                }
-                            }
-                            
-                            Spacer()
-                            
+                        Spacer()
+                        
+                        Text("$\(product.price)" as String)
+                            .foregroundColor(.black)
+                            .font(.logoFont(size: 14))
+                    }
+                    .padding(.horizontal,6)
+                    
+                    
+                    AddToCartButtonView()
+                        .padding(.bottom, 30)
+                    
+                    if isDrawerOpen {
+                        VStack {
+                            Divider()
+                            Text("Product details:")
+                            Text(product.description)
                         }
                     }
-                    .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
-                    .background(.ultraThinMaterial)
-                    .cornerRadius(12)
-                    .opacity(isAnimating ? 1 : 0)
-                    .frame(width: UIScreen.main.bounds.width)
-                    .offset(y: isDrawerOpen ? 20 : UIScreen.main.bounds.height - 380)
-                    //: Vstack
+                    
+                    Spacer()
+                    
+                }
+            }
+            .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+            .background(.ultraThinMaterial)
+            .cornerRadius(12)
+            .opacity(isAnimating ? 1 : 0)
+            .frame(width: UIScreen.main.bounds.width)
+            .offset(y: isDrawerOpen ? 20 : UIScreen.main.bounds.height - 250)
+            //: Vstack
 
-                } //: drawer
-                
-                
-            }  //: VStack
-            
-        }
+        } //: drawer
         .overlay(alignment: .bottom, content: {
             BottomMenuBarView(currentView: "")
         })
+        .navigationBarHidden(true)
         
         
     }

@@ -16,6 +16,9 @@ struct ProductListScreen: View {
     // MARK: - body
     var body: some View {
         VStack {
+            Text("Products")
+                .font(.logoFont(size: 32))
+            
             ScrollView {
 
                 LazyVGrid(columns: columns, spacing: 20) {
@@ -32,8 +35,7 @@ struct ProductListScreen: View {
             Spacer()
             BottomMenuBarView(currentView: "ProductListScreen")
         }
-        .navigationBarTitle("Products", displayMode: .inline)
-        
+        .navigationBarHidden(true)
     }
 }
 
