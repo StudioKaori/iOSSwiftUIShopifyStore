@@ -30,11 +30,9 @@ struct CartBadgeView: View {
                     .scaleEffect(self.isAnimating ? 1 : 2)
                     .animation(self.isAnimating ? Animation.spring().repeatCount(1) : nil)
                     .onAppear {
-                        print("pulsate \(isAnimating)")
+                        // print("isAnimating \(isAnimating)")
                         self.isAnimating = true
-                    }
-                
-                
+                    } 
             }
             .offset(x: 10, y: -10)
             //: Zstack
