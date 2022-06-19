@@ -8,10 +8,12 @@
 import SwiftUI
 
 class CartItems: ObservableObject {
-    @Published var cartItems:[Product: Int] = [:]
+    @Published var cartItems: [Product] = []
+    @Published var quantityOfCartItems: [String: Int] = [:]
+    
     
     func getTotalNumbersOfItems() -> Int {
-        return cartItems.reduce(0, { x, element in
+        return quantityOfCartItems.reduce(0, { x, element in
             return x + element.value
         })
     }

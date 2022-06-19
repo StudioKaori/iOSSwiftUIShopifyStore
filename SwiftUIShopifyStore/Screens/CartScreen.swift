@@ -8,8 +8,51 @@
 import SwiftUI
 
 struct CartScreen: View {
+    @EnvironmentObject var cartItems: CartItems
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Cart")
+            
+            ForEach(cartItems.cartItems) { product in
+                NavigationLink(destination: ProductDetailScreen(product: product)) {
+                    HStack {
+                        URLImage(url: product.imageUrls[0])
+                        .frame(width: 70, height: 70)
+                        .background(Color.gray)
+                        .cornerRadius(4)
+                        
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text(product.title)
+                                .bold()
+                            
+//                            HStack {
+//                                Text(tvShow.show.premiered?.prefix(4).appending(" -") ?? "")
+//                                    .font(.footnote)
+//                                
+//                                Text(tvShow.show.ended?.prefix(4) ?? "")
+//                                    .font(.footnote)
+//                                
+//                                Spacer()
+//                                
+//                                Image(systemName: "star.fill")
+//                                    .font(.footnote)
+//                                    .foregroundColor(Color.gray)
+//                                
+//                                Text(String(tvShow.show.rating.average ?? 0))
+//                                    .font(.footnote)
+//                            }
+                        }
+
+                    }
+                }
+                .padding(.horizontal, 2)
+                .padding(.vertical, 6)
+                 //: navigation link
+                
+            } //: foreach
+        } //: Vstack
+                    
     }
 }
 

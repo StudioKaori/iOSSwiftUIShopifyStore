@@ -13,7 +13,7 @@ struct BottomMenuBarView: View {
     
     let currentView: String
     
-    @EnvironmentObject var cartItems: CartItems
+    //@EnvironmentObject var cartItems: CartItems
     
     
     // MARK: - Body
@@ -57,25 +57,25 @@ struct BottomMenuBarView: View {
                 NavigationLink(destination: CartScreen()) {
                     Image(systemName: "cart")
                     .foregroundColor(Color.black)
-                    .overlay(
-                        
-                        ZStack {
-                            Circle()
-                                .foregroundColor(.black)
-                            
-                            Text("\(cartItems.getTotalNumbersOfItems())")
-                            //Text("0")
-                                .foregroundColor(.gray)
-                                .font(.footnote)
-                        }
-                            .offset(x: 10, y: -10)
-                        
-                    )
+//                    .overlay(
+//
+//                        ZStack {
+//                            Circle()
+//                                .foregroundColor(.black)
+//
+//                            //Text("\(cartItems.getTotalNumbersOfItems())")
+//                            //Text("0")
+//                                .foregroundColor(.gray)
+//                                .font(.footnote)
+//                        }
+//                            .offset(x: 10, y: -10)
+//
+//                    )
                 }
             } else {
                 Image(systemName: "cart")
                 .foregroundColor(Color.black)
-                .overlay(Text("3"))
+                //.overlay(Text("3"))
             }
 
             Spacer()

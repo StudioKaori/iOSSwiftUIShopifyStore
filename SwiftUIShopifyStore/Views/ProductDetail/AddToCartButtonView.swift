@@ -15,11 +15,8 @@ struct AddToCartButtonView: View {
     // MARK: - Body
     var body: some View {
         Button(action: {
-            cartItems.cartItems.updateValue(1, forKey: product)
-//            for (key,value) in cartItems.cartItems {
-//                print("\(key)は\(value)円です。")
-//            }
-
+            cartItems.cartItems.append(product)
+            cartItems.quantityOfCartItems.updateValue(1, forKey: product.handle)
         }, label: {
           Spacer()
           Text("Add to cart".uppercased())
