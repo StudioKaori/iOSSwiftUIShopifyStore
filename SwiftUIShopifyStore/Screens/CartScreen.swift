@@ -12,9 +12,12 @@ struct CartScreen: View {
     @EnvironmentObject var cartItems: CartItems
     
     var body: some View {
-        VStack (alignment: .leading) {
+        VStack (alignment: .center) {
             Text("Cart")
+                .font(.logoFont(size: 32))
+            Divider()
             
+            // MARK: - Cart Items
             ScrollView {
                 ForEach(cartItems.cartItems) { product in
                     NavigationLink(destination: ProductDetailScreen(product: product)) {
@@ -27,6 +30,8 @@ struct CartScreen: View {
                                 Text(product.title)
                                     .foregroundColor(.black)
                                     .font(.logoFont(size: 24))
+                                
+                                Spacer()
                                 
                                 HStack(alignment: .top) {
                                     
@@ -67,8 +72,12 @@ struct CartScreen: View {
                     
                 } //: foreach
             }
+            
+            Spacer()
+            BottomMenuBarView(currentView: "CartScreen")
 
         } //: Vstack
+        .navigationBarHidden(true)
                     
     }
 }
