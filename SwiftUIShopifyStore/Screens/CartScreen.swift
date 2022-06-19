@@ -26,22 +26,22 @@ struct CartScreen: View {
                             Text(product.title)
                                 .bold()
                             
-//                            HStack {
+                            HStack {
 //                                Text(tvShow.show.premiered?.prefix(4).appending(" -") ?? "")
 //                                    .font(.footnote)
-//                                
+//
 //                                Text(tvShow.show.ended?.prefix(4) ?? "")
 //                                    .font(.footnote)
-//                                
-//                                Spacer()
-//                                
-//                                Image(systemName: "star.fill")
-//                                    .font(.footnote)
-//                                    .foregroundColor(Color.gray)
-//                                
-//                                Text(String(tvShow.show.rating.average ?? 0))
-//                                    .font(.footnote)
-//                            }
+                                
+                                Spacer()
+                                
+                                Image(systemName: "star.fill")
+                                    .font(.footnote)
+                                    .foregroundColor(Color.gray)
+                                
+                                Text("\(cartItems.quantityOfCartItems[product.handle] ?? 0)")
+                                    .font(.footnote)
+                            }
                         }
 
                     }
