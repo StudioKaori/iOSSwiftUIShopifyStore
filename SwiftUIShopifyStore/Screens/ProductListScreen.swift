@@ -36,6 +36,12 @@ struct ProductListScreen: View {
                         RoundedRectangle(cornerRadius: 4)
                             .stroke(.gray, lineWidth: 1)
                     )
+                .onChange(of: productSearchQuery,
+                          perform: { query in
+                    if query != "", query != " " {
+                        productListViewModel.getProducts(numbersOfProducts: 20, query: query)
+                    }
+                })
   
             }  //: title and searchbar
             
