@@ -36,6 +36,7 @@
 		43FAD958285E5C5400DE3B61 /* ProductDetailDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD957285E5C5400DE3B61 /* ProductDetailDrawerView.swift */; };
 		43FAD95C285E616300DE3B61 /* CartItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD95B285E616300DE3B61 /* CartItems.swift */; };
 		43FAD95E285E6D8400DE3B61 /* CartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD95D285E6D8400DE3B61 /* CartScreen.swift */; };
+		43FAD960285F0BEE00DE3B61 /* CartItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD95F285F0BEE00DE3B61 /* CartItemsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		43FAD957285E5C5400DE3B61 /* ProductDetailDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailDrawerView.swift; sourceTree = "<group>"; };
 		43FAD95B285E616300DE3B61 /* CartItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItems.swift; sourceTree = "<group>"; };
 		43FAD95D285E6D8400DE3B61 /* CartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreen.swift; sourceTree = "<group>"; };
+		43FAD95F285F0BEE00DE3B61 /* CartItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsView.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 				43C41B1A2858A50800525824 /* ProductDetail */,
 				43FAD949285C8C1F00DE3B61 /* PlayerView.swift */,
 				43FAD94F285CAB3300DE3B61 /* BottomMenuBarView.swift */,
+				43FAD961285F0BF500DE3B61 /* Cart */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +253,14 @@
 				43FAD94B285C8CE900DE3B61 /* main-m.mp4 */,
 			);
 			path = Videos;
+			sourceTree = "<group>";
+		};
+		43FAD961285F0BF500DE3B61 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				43FAD95F285F0BEE00DE3B61 /* CartItemsView.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 		8559BC584BF5C17BB0C14A00 /* Frameworks */ = {
@@ -399,6 +410,7 @@
 				43B7EB0A28462819007F902E /* ProductCardView.swift in Sources */,
 				43FAD95C285E616300DE3B61 /* CartItems.swift in Sources */,
 				43B7EAF8284558D3007F902E /* ShopInfoViewModel.swift in Sources */,
+				43FAD960285F0BEE00DE3B61 /* CartItemsView.swift in Sources */,
 				43B7EAF52844FECD007F902E /* ShopifyClient.swift in Sources */,
 				43FAD94A285C8C1F00DE3B61 /* PlayerView.swift in Sources */,
 				43FAD956285E2F0F00DE3B61 /* AddToCartButtonView.swift in Sources */,
