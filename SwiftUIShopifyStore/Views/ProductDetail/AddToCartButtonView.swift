@@ -15,8 +15,16 @@ struct AddToCartButtonView: View {
     // MARK: - Body
     var body: some View {
         Button(action: {
-            cartItems.cartItems.append(product)
-            cartItems.quantityOfCartItems.updateValue(1, forKey: product.handle)
+            
+            let quantity = cartItems.quantityOfCartItems[product.handle] ?? 0
+            let newQuantity = quantity + 1
+            // if the item is not in the cartItems.cartItems, append the product
+            if quantity == 0 {
+                cartItems.cartItems.append(product)
+            }
+            
+            cartItems.quantityOfCartItems.updateValue(newQuantity, forKey: product.handle)
+            
         }, label: {
           Spacer()
           Text("Add to cart".uppercased())
