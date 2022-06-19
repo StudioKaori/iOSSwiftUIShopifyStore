@@ -57,6 +57,7 @@ struct BottomMenuBarView: View {
                 NavigationLink(destination: CartScreen()) {
                     Image(systemName: "cart")
                     .foregroundColor(Color.black)
+                    .overlay(CartBadgeView())
 //                    .overlay(
 //
 //                        ZStack {

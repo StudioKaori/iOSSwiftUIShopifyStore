@@ -37,6 +37,7 @@
 		43FAD95C285E616300DE3B61 /* CartItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD95B285E616300DE3B61 /* CartItems.swift */; };
 		43FAD95E285E6D8400DE3B61 /* CartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD95D285E6D8400DE3B61 /* CartScreen.swift */; };
 		43FAD960285F0BEE00DE3B61 /* CartItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD95F285F0BEE00DE3B61 /* CartItemsView.swift */; };
+		43FAD963285F0CED00DE3B61 /* CartBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD962285F0CED00DE3B61 /* CartBadgeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		43FAD95B285E616300DE3B61 /* CartItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItems.swift; sourceTree = "<group>"; };
 		43FAD95D285E6D8400DE3B61 /* CartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreen.swift; sourceTree = "<group>"; };
 		43FAD95F285F0BEE00DE3B61 /* CartItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsView.swift; sourceTree = "<group>"; };
+		43FAD962285F0CED00DE3B61 /* CartBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartBadgeView.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -188,6 +190,7 @@
 				43C41B1A2858A50800525824 /* ProductDetail */,
 				43FAD949285C8C1F00DE3B61 /* PlayerView.swift */,
 				43FAD94F285CAB3300DE3B61 /* BottomMenuBarView.swift */,
+				43FAD962285F0CED00DE3B61 /* CartBadgeView.swift */,
 				43FAD961285F0BF500DE3B61 /* Cart */,
 			);
 			path = Views;
@@ -407,6 +410,7 @@
 				43C41B1C2858B7E300525824 /* HeaderDetailView.swift in Sources */,
 				43B7EAF22844FAC4007F902E /* KeyManager.swift in Sources */,
 				43B7EB012845D3B6007F902E /* ProductListScreen.swift in Sources */,
+				43FAD963285F0CED00DE3B61 /* CartBadgeView.swift in Sources */,
 				43B7EB0A28462819007F902E /* ProductCardView.swift in Sources */,
 				43FAD95C285E616300DE3B61 /* CartItems.swift in Sources */,
 				43B7EAF8284558D3007F902E /* ShopInfoViewModel.swift in Sources */,
