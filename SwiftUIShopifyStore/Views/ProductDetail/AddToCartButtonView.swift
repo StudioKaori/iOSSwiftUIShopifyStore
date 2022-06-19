@@ -24,6 +24,8 @@ struct AddToCartButtonView: View {
             }
             
             cartItems.quantityOfCartItems.updateValue(newQuantity, forKey: product.handle)
+            cartItems.setTotalNumbersOfItems()
+            feedback.impactOccurred()
             
         }, label: {
           Spacer()

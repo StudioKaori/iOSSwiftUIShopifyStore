@@ -38,6 +38,7 @@
 		43FAD95E285E6D8400DE3B61 /* CartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD95D285E6D8400DE3B61 /* CartScreen.swift */; };
 		43FAD960285F0BEE00DE3B61 /* CartItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD95F285F0BEE00DE3B61 /* CartItemsView.swift */; };
 		43FAD963285F0CED00DE3B61 /* CartBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD962285F0CED00DE3B61 /* CartBadgeView.swift */; };
+		43FAD967285F0F7D00DE3B61 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD966285F0F7D00DE3B61 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		43FAD95D285E6D8400DE3B61 /* CartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreen.swift; sourceTree = "<group>"; };
 		43FAD95F285F0BEE00DE3B61 /* CartItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsView.swift; sourceTree = "<group>"; };
 		43FAD962285F0CED00DE3B61 /* CartBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartBadgeView.swift; sourceTree = "<group>"; };
+		43FAD966285F0F7D00DE3B61 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,7 +116,7 @@
 				43B7EADF28449BB5007F902E /* SwiftUIShopifyStoreApp.swift */,
 				43FAD93D285C80D100DE3B61 /* Info.plist */,
 				43B7EAED28449CEF007F902E /* apikey.plist */,
-				43B7EAF028449E23007F902E /* Helpers */,
+				43B7EAF028449E23007F902E /* Utilities */,
 				43FAD944285C863F00DE3B61 /* Extensions */,
 				43FAD945285C87C800DE3B61 /* Assets */,
 				43B7EB0B28462904007F902E /* PreviewSampleObjects */,
@@ -148,12 +150,14 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		43B7EAF028449E23007F902E /* Helpers */ = {
+		43B7EAF028449E23007F902E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				43B7EAF12844FAC4007F902E /* KeyManager.swift */,
+				43FAD95B285E616300DE3B61 /* CartItems.swift */,
+				43FAD966285F0F7D00DE3B61 /* Constant.swift */,
 			);
-			path = Helpers;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		43B7EAF32844FEC1007F902E /* APIs */ = {
@@ -178,7 +182,6 @@
 			children = (
 				43B7EAFC2845D0CD007F902E /* Product.swift */,
 				43B7EAFE2845D11C007F902E /* ShopInfo.swift */,
-				43FAD95B285E616300DE3B61 /* CartItems.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,11 +189,10 @@
 		43B7EB042846248D007F902E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				43FAD965285F0DD100DE3B61 /* BackgourdVideoPlayer */,
 				43B7EB05284624C2007F902E /* ProductList */,
 				43C41B1A2858A50800525824 /* ProductDetail */,
-				43FAD949285C8C1F00DE3B61 /* PlayerView.swift */,
-				43FAD94F285CAB3300DE3B61 /* BottomMenuBarView.swift */,
-				43FAD962285F0CED00DE3B61 /* CartBadgeView.swift */,
+				43FAD964285F0DB600DE3B61 /* BottomMenuBar */,
 				43FAD961285F0BF500DE3B61 /* Cart */,
 			);
 			path = Views;
@@ -264,6 +266,23 @@
 				43FAD95F285F0BEE00DE3B61 /* CartItemsView.swift */,
 			);
 			path = Cart;
+			sourceTree = "<group>";
+		};
+		43FAD964285F0DB600DE3B61 /* BottomMenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				43FAD94F285CAB3300DE3B61 /* BottomMenuBarView.swift */,
+				43FAD962285F0CED00DE3B61 /* CartBadgeView.swift */,
+			);
+			path = BottomMenuBar;
+			sourceTree = "<group>";
+		};
+		43FAD965285F0DD100DE3B61 /* BackgourdVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				43FAD949285C8C1F00DE3B61 /* PlayerView.swift */,
+			);
+			path = BackgourdVideoPlayer;
 			sourceTree = "<group>";
 		};
 		8559BC584BF5C17BB0C14A00 /* Frameworks */ = {
@@ -409,6 +428,7 @@
 				43B7EAFA28456357007F902E /* ProductListViewModel.swift in Sources */,
 				43C41B1C2858B7E300525824 /* HeaderDetailView.swift in Sources */,
 				43B7EAF22844FAC4007F902E /* KeyManager.swift in Sources */,
+				43FAD967285F0F7D00DE3B61 /* Constant.swift in Sources */,
 				43B7EB012845D3B6007F902E /* ProductListScreen.swift in Sources */,
 				43FAD963285F0CED00DE3B61 /* CartBadgeView.swift in Sources */,
 				43B7EB0A28462819007F902E /* ProductCardView.swift in Sources */,

@@ -58,20 +58,6 @@ struct BottomMenuBarView: View {
                     Image(systemName: "cart")
                     .foregroundColor(Color.black)
                     .overlay(CartBadgeView())
-//                    .overlay(
-//
-//                        ZStack {
-//                            Circle()
-//                                .foregroundColor(.black)
-//
-//                            //Text("\(cartItems.getTotalNumbersOfItems())")
-//                            //Text("0")
-//                                .foregroundColor(.gray)
-//                                .font(.footnote)
-//                        }
-//                            .offset(x: 10, y: -10)
-//
-//                    )
                 }
             } else {
                 Image(systemName: "cart")

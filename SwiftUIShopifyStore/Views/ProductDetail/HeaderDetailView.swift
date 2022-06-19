@@ -16,7 +16,7 @@ struct HeaderDetailView: View {
         VStack(alignment: .leading, spacing: 6) {
 
             Text(productTitle)
-                .font(.logoFont(size: 64))
+                .font(.logoFont(size: 40))
                 .kerning(-4)
             
         } //: Vstack
