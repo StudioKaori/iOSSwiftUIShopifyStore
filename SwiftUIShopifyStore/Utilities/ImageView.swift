@@ -20,7 +20,7 @@ struct ImageView: View {
         Image(uiImage: image)
             .resizable()
             .onReceive(imageLoader.didChange) { data in
-                self.image = UIImage(data: data) ?? UIImage()
+                self.image = UIImage(data: data) ?? UIImage(named: "Logo")!
             }
     }
 }
