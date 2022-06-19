@@ -9,30 +9,35 @@ import SwiftUI
 
 struct CartBadgeView: View {
     @EnvironmentObject var cartItems: CartItems
-    @State private var pulsate = false
+    @State private var isAnimating = false
     
     var body: some View {
         
         if cartItems.totalQuantity != 0 {
             ZStack {
-
+                
                 Circle()
                     .foregroundColor(.black)
                 
                 Text("\(cartItems.totalQuantity)")
-                    .onReceive(cartItems.$totalQuantity, perform: {_ in
-                        print("pulsate \(pulsate)")
-                            self.pulsate = true
-                    })
+                    .bold()
+                //                    .onReceive(cartItems.$totalQuantity, perform: {_ in
+                //                        print("pulsate \(pulsate)")
+                //                            self.pulsate = true
+                //                    })
                     .foregroundColor(.gray)
                     .font(.footnote)
-                    .scaleEffect(self.pulsate ? 2 : 1)
-                    .animation(self.pulsate ? Animation.spring().repeatCount(3) : nil)
-                    
-                    
+                    .scaleEffect(self.isAnimating ? 1 : 2)
+                    .animation(self.isAnimating ? Animation.spring().repeatCount(1) : nil)
+                    .onAppear {
+                        print("pulsate \(isAnimating)")
+                        self.isAnimating = true
+                    }
+                
+                
             }
             .offset(x: 10, y: -10)
-             //: Zstack
+            //: Zstack
         }
         
     }

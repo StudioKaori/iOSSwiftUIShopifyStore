@@ -62,7 +62,7 @@ struct BottomMenuBarView: View {
             } else {
                 Image(systemName: "cart")
                 .foregroundColor(Color.black)
-                //.overlay(Text("3"))
+                .overlay(CartBadgeView())
             }
 
             Spacer()
