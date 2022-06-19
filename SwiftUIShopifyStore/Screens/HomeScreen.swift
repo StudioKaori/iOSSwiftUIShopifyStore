@@ -30,8 +30,8 @@ struct HomeScreen: View {
                 
                 Text("Reward yourself!")
                     .font(Font.logoFont(size: 16))
+                    .padding(.bottom, 40)
                 
-                Spacer()
                 
                 BottomMenuBarView(currentView: "HomeScreen")
             } //: VStack

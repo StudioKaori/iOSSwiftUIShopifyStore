@@ -15,14 +15,14 @@ class ProductListViewModel: ObservableObject {
     @Published var products: [Product] = []
     
     // MARK: - Methods
-    func getProducts(numbersOfProducts: Int32){
+    func getProducts(numbersOfProducts: Int32, query: String = ""){
         var products: [Product] = []
         // products information
         // https://shopify.dev/api/storefront/2022-04/queries/products
         // product field : https://shopify.dev/api/storefront/2022-04/objects/Product#fields
         // buy sdk: https://github.com/Shopify/mobile-buy-sdk-ios/
         let productsQuery = Storefront.buildQuery { $0
-            .products(first: numbersOfProducts) { $0
+            .products(first: numbersOfProducts, query: query) { $0
                 .edges { $0
                     .node { $0
                         .handle()
@@ -78,11 +78,13 @@ class ProductListViewModel: ObservableObject {
                 )
                 products.append(product)
             }
+
             //print("Product View Model : \(products)")
             self?.products = products
         }
         productsTask.resume()
         
     } //:getProducts
+    
 }
 
