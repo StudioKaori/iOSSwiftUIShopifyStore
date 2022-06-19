@@ -23,7 +23,8 @@ struct ProductDetailScreen: View {
             // Product images
             TabView {
                 ForEach(product.imageUrls, id: \.self) { imageUrl in
-                    URLImage(url: imageUrl)
+                    ImageView(withURL: imageUrl)
+                        .aspectRatio(contentMode: .fill)
                 }
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200, alignment: .top)

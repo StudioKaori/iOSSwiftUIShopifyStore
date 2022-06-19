@@ -39,6 +39,8 @@
 		43FAD960285F0BEE00DE3B61 /* CartItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD95F285F0BEE00DE3B61 /* CartItemsView.swift */; };
 		43FAD963285F0CED00DE3B61 /* CartBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD962285F0CED00DE3B61 /* CartBadgeView.swift */; };
 		43FAD967285F0F7D00DE3B61 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD966285F0F7D00DE3B61 /* Constant.swift */; };
+		43FAD969285FC52200DE3B61 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD968285FC52200DE3B61 /* ImageLoader.swift */; };
+		43FAD96B285FC5E900DE3B61 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD96A285FC5E900DE3B61 /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		43FAD95F285F0BEE00DE3B61 /* CartItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsView.swift; sourceTree = "<group>"; };
 		43FAD962285F0CED00DE3B61 /* CartBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartBadgeView.swift; sourceTree = "<group>"; };
 		43FAD966285F0F7D00DE3B61 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		43FAD968285FC52200DE3B61 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		43FAD96A285FC5E900DE3B61 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,6 +160,8 @@
 				43B7EAF12844FAC4007F902E /* KeyManager.swift */,
 				43FAD95B285E616300DE3B61 /* CartItems.swift */,
 				43FAD966285F0F7D00DE3B61 /* Constant.swift */,
+				43FAD968285FC52200DE3B61 /* ImageLoader.swift */,
+				43FAD96A285FC5E900DE3B61 /* ImageView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -424,12 +430,14 @@
 				43C41B192858A4FA00525824 /* NavigationBarDetailView.swift in Sources */,
 				43B7EB032845D544007F902E /* ProductDetailScreen.swift in Sources */,
 				43B7EAE028449BB5007F902E /* SwiftUIShopifyStoreApp.swift in Sources */,
+				43FAD969285FC52200DE3B61 /* ImageLoader.swift in Sources */,
 				43FAD941285C852A00DE3B61 /* HomeScreen.swift in Sources */,
 				43B7EAFA28456357007F902E /* ProductListViewModel.swift in Sources */,
 				43C41B1C2858B7E300525824 /* HeaderDetailView.swift in Sources */,
 				43B7EAF22844FAC4007F902E /* KeyManager.swift in Sources */,
 				43FAD967285F0F7D00DE3B61 /* Constant.swift in Sources */,
 				43B7EB012845D3B6007F902E /* ProductListScreen.swift in Sources */,
+				43FAD96B285FC5E900DE3B61 /* ImageView.swift in Sources */,
 				43FAD963285F0CED00DE3B61 /* CartBadgeView.swift in Sources */,
 				43B7EB0A28462819007F902E /* ProductCardView.swift in Sources */,
 				43FAD95C285E616300DE3B61 /* CartItems.swift in Sources */,
