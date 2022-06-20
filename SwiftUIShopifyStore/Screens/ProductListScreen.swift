@@ -43,6 +43,7 @@ struct ProductListScreen: View {
                 .onChange(of: productSearchQuery,
                           perform: { query in
                     if query != "", query != " " {
+                        productCategory = ProductCategory.all
                         productListViewModel.getProducts(numbersOfProducts: 20, query: query)
                     }
                 })
