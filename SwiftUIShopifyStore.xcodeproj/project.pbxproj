@@ -163,7 +163,6 @@
 				43FAD95B285E616300DE3B61 /* CartItems.swift */,
 				43FAD966285F0F7D00DE3B61 /* Constant.swift */,
 				43FAD968285FC52200DE3B61 /* ImageLoader.swift */,
-				43FAD96A285FC5E900DE3B61 /* ImageView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -198,6 +197,7 @@
 		43B7EB042846248D007F902E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				43FAD96A285FC5E900DE3B61 /* ImageView.swift */,
 				43FAD965285F0DD100DE3B61 /* BackgourdVideoPlayer */,
 				43B7EB05284624C2007F902E /* ProductList */,
 				43C41B1A2858A50800525824 /* ProductDetail */,

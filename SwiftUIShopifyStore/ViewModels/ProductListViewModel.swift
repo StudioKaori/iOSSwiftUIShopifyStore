@@ -80,7 +80,9 @@ class ProductListViewModel: ObservableObject {
             }
 
             //print("Product View Model : \(products)")
-            self?.products = products
+            DispatchQueue.main.async {
+                self?.products = products
+            }
         }
         productsTask.resume()
         
