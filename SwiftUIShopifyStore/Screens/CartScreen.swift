@@ -6,11 +6,9 @@
 //
 
 import SwiftUI
-import MobileBuySDK
 
 struct CartScreen: View {
 
-    
     var body: some View {
         VStack (alignment: .center) {
             Text("Cart")
@@ -24,7 +22,6 @@ struct CartScreen: View {
 
         } //: Vstack
         .navigationBarHidden(true)
-                    
     }
 }
 
