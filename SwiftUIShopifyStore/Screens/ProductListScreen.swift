@@ -18,7 +18,7 @@ struct ProductListScreen: View {
     var body: some View {
         VStack {
             
-            // title and searchbar
+            // MARK: -  title and searchbar
             HStack {
                 Text("Products")
                     .font(.logoFont(size: 32))
@@ -46,21 +46,51 @@ struct ProductListScreen: View {
             }  //: title and searchbar
             
             
-            ScrollView {
+            Divider()
+            
+            HStack {
+                Spacer()
+                
+                Button(action: {}, label: {
+                    Text("ALL")
+                })
+                Spacer()
+                
+                Button(action: {}, label: {
+                    Text("ALL")
+                })
+                Spacer()
+                
+                Button(action: {}, label: {
+                    Text("ALL")
+                })
+                
+                Spacer()
+                
 
+            }
+            .padding(.horizontal, 10)
+            
+            Divider()
+            
+            
+            // MARK: - Search result
+            ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(productListViewModel.products) { product in
                         ProductCardView(product: product)
                     }
                 }
-            } //: VStack
+            }
             .padding(.horizontal, 10)
             .onAppear{
                 productListViewModel.getProducts(numbersOfProducts: 30)
             }
+             //: search result
             
             Spacer()
             BottomMenuBarView(currentView: "ProductListScreen")
+            
         }
         .navigationBarHidden(true)
     }
