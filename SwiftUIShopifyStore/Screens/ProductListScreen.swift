@@ -7,12 +7,22 @@
 
 import SwiftUI
 
+enum ProductCategory: String, Hashable, CaseIterable {
+    case all = "all"
+    case lip = "lip"
+    case skin = "skin"
+}
+
 struct ProductListScreen: View {
     // MARK: - property
     @StateObject private var productListViewModel = ProductListViewModel()
+    
     @State private var productSearchQuery = ""
     
+    @State private var productCategory = ProductCategory.all
+    
     var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 10), count: 2)
+    
     
     // MARK: - body
     var body: some View {
@@ -48,28 +58,21 @@ struct ProductListScreen: View {
             
             Divider()
             
+            // MARK: - Product category
             HStack {
                 Spacer()
                 
-                Button(action: {}, label: {
-                    Text("ALL")
-                })
-                Spacer()
-                
-                Button(action: {}, label: {
-                    Text("ALL")
-                })
-                Spacer()
-                
-                Button(action: {}, label: {
-                    Text("ALL")
-                })
-                
-                Spacer()
-                
-
+                ForEach(ProductCategory.allCases, id: \.rawValue) { category in
+                    Button(action: {
+                        self.productCategory = category
+                    }, label: {
+                        Text(category.rawValue.uppercased())
+                    })
+                    Spacer()
+                }
             }
             .padding(.horizontal, 10)
+             //: category
             
             Divider()
             
