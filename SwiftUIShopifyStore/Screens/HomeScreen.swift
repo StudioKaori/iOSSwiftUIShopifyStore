@@ -41,9 +41,9 @@ struct HomeScreen: View {
         .navigationBarHidden(true)
         .onAppear {
             // Create checkout ID if it isn't exist
-
+            if checkoutInfo.checkoutId == GraphQL.ID(rawValue: "") {
                 checkoutInfo.createCheckout()
-
+            }
         }
     }
 }

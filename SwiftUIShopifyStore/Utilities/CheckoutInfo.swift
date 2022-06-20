@@ -10,7 +10,8 @@ import MobileBuySDK
 
 class CheckoutInfo {
     // MARK: - Properties
-    //@Published var checkoutId: GraphQL.ID = GraphQL.ID(rawValue: "")
+    @Published var checkoutId: GraphQL.ID = GraphQL.ID(rawValue: "")
+    
     @EnvironmentObject var cartItems: CartItems
     
     // MARK: - Body
@@ -53,8 +54,8 @@ class CheckoutInfo {
                 return
             } else {
                 DispatchQueue.main.async {
-                    self?.cartItems.checkoutId = checkoutID!
-                    print("Checkout id : \(self?.cartItems.checkoutId)")
+                    self?.checkoutId = checkoutID!
+                    print("Checkout id : \(self?.checkoutId)")
                 }
                 
             }
