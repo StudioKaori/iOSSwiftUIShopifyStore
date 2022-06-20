@@ -8,20 +8,13 @@
 import SwiftUI
 import MobileBuySDK
 
-class CheckoutViewModel: ObservableObject{
+class CheckoutInfo: ObservableObject{
     // MARK: - Properties
     @Published var checkout: Checkout = Checkout()
     
     // MARK: - Body
     func createCheckout() {
         // Checkout create input : https://shopify.dev/api/storefront/2022-04/input-objects/CheckoutCreateInput
-        
-//        let checkoutInput = Storefront.CheckoutCreateInput.create(
-//            lineItems: .value([
-//                Storefront.CheckoutLineItemInput.create(variantId: GraphQL.ID(rawValue: "mFyaWFu"), quantity: 5),
-//                Storefront.CheckoutLineItemInput.create(variantId: GraphQL.ID(rawValue: "8vc2hGl"), quantity: 3),
-//            ])
-//        )
         
         let checkoutInput = Storefront.CheckoutCreateInput.create(
             note: .value("iOS app anonymous user")

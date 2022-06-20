@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeScreen: View {
     // MARK: - property
+    @EnvironmentObject var checkoutInfo: CheckoutInfo
     
     // MARK: - Body
     var body: some View {
@@ -36,8 +37,10 @@ struct HomeScreen: View {
                 BottomMenuBarView(currentView: "HomeScreen")
             } //: VStack
         } //: Zstack
-        .navigationBarTitle("Home")
         .navigationBarHidden(true)
+        .onAppear {
+            checkoutInfo.createCheckout()
+        }
     }
 }
 
