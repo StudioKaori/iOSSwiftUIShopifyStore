@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MobileBuySDK
 
 struct Product: Identifiable, Hashable{
     var id = UUID()
@@ -14,5 +15,5 @@ struct Product: Identifiable, Hashable{
     var price: Decimal
     var imageUrls: [URL]
     var handle: String
-    
+    var variantID : GraphQL.ID
 }

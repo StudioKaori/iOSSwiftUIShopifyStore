@@ -34,6 +34,13 @@ class ProductListViewModel: ObservableObject {
                                 }
                             }
                         }
+                        .variants(first: 1) { $0
+                            .edges { $0
+                                .node { $0
+                                    .id()
+                                }
+                            }
+                        }
                         .priceRange { $0
                             .maxVariantPrice { $0
                                 .amount()
@@ -68,19 +75,30 @@ class ProductListViewModel: ObservableObject {
                     images.append(productImageUrl)
                 }
                 
+                var variantID: GraphQL.ID!
+                for productVariantID in item.node.variants.edges {
+                    variantID = productVariantID.node.id
+                }
+                
+                guard variantID != nil else {
+                    print("variant ID error.")
+                    return
+                }
+                
                 let product: Product = Product(
                     title: item.node.title,
                     description: item.node.description,
                     price: item.node.priceRange.maxVariantPrice.amount,
                     imageUrls: images,
-                    handle: item.node.handle
+                    handle: item.node.handle,
+                    variantID: variantID
                 )
                 products.append(product)
             }
 
-            //print("Product View Model : \(products)")
             DispatchQueue.main.async {
                 self?.products = products
+                print("Product View Model : \(self?.products)")
             }
         }
         productsTask.resume()

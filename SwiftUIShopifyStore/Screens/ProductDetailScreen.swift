@@ -57,10 +57,10 @@ struct ProductDetailScreen: View {
     
 }
 
-struct ProductDetailScreen_Previews: PreviewProvider {
-    @State static var previewProduct = previewSampleProductObject
-    static var previews: some View {
-        ProductDetailScreen(product: previewProduct)
-            .background(Color.gray)
-    }
-}
+//struct ProductDetailScreen_Previews: PreviewProvider {
+//    @State static var previewProduct = previewSampleProductObject
+//    static var previews: some View {
+//        ProductDetailScreen(product: previewProduct)
+//            .background(Color.gray)
+//    }
+//}
