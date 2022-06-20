@@ -59,6 +59,9 @@ struct ProductListScreen: View {
                 ForEach(ProductCategory.allCases, id: \.rawValue) { category in
                     Button(action: {
                         self.productCategory = category
+                        productListViewModel.getProducts(
+                            numbersOfProducts: 26,
+                            query: category == .all ? "" : "tag:\(category)")
                     }, label: {
                         Text(category.rawValue.uppercased())
                     })
