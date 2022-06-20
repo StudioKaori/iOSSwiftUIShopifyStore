@@ -39,7 +39,10 @@ struct HomeScreen: View {
         } //: Zstack
         .navigationBarHidden(true)
         .onAppear {
-            checkoutInfo.createCheckout()
+            // Create checkout ID if it isn't exist
+            if checkoutInfo.checkout.checkoutID == nil {
+                checkoutInfo.createCheckout()
+            }
         }
     }
 }
