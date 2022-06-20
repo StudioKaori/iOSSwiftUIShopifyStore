@@ -63,7 +63,11 @@ struct ProductListScreen: View {
                             numbersOfProducts: 26,
                             query: category == .all ? "" : "tag:\(category)")
                     }, label: {
-                        Text(category.rawValue.uppercased())
+                        VStack {
+                            Text(category.rawValue.uppercased())
+                                .font(.logoFont(size: 18))
+                                .foregroundColor(category.rawValue == productCategory.rawValue ? .black : .gray)
+                        }
                     })
                     Spacer()
                 }
