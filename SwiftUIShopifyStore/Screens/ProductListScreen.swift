@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum ProductCategory: String, Hashable, CaseIterable {
-    case all = "all"
-    case lip = "lip"
-    case skin = "skin"
-}
-
 struct ProductListScreen: View {
     // MARK: - property
     @StateObject private var productListViewModel = ProductListViewModel()
