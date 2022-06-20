@@ -29,9 +29,8 @@ struct AddToCartButtonView: View {
             }
             
             // Shopify checkout
-            print("add to cart checkout id parent: \(checkoutInfo.checkoutId)")
-            addToCartViewModel.checkoutId = checkoutInfo.checkoutId
-            addToCartViewModel.addToCart(variantID: product.variantID)
+            // addToCartViewModel.checkoutId = checkoutInfo.checkoutId
+            // addToCartViewModel.addToCart(variantID: product.variantID)
             
             // local
             cartItems.quantityOfCartItems.updateValue(newQuantity, forKey: product.handle)
