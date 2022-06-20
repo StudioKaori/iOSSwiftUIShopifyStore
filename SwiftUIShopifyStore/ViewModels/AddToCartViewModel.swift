@@ -25,5 +25,20 @@ class AddToCartViewModel: ObservableObject {
                 }
             }
         }
+        
+        let task = ShopifyClient.client.mutateGraphWith(mutation) { result, error in
+            guard error == nil else {
+                print("Add to cart error : \(error)")
+                return
+            }
+
+            guard let userError = result?.checkoutCreate?.userErrors else {
+                print("Add to cart error.")
+                return
+            }
+
+            let checkoutID = result?.checkoutCreate?.checkout?.id
+        }
+        task.resume()
     }
 }
