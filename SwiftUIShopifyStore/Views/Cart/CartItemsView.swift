@@ -39,6 +39,7 @@ struct CartItemsView: View {
                             Button(action: {
                                 if (cartItems.quantityOfCartItems[product.handle] ?? 0) - 1 != 0 {
                                     cartItems.quantityOfCartItems.updateValue((cartItems.quantityOfCartItems[product.handle] ?? 0) - 1, forKey: product.handle)
+                                    cartItems.setTotalNumbersOfItems()
                                 }
                             }, label: {
                                 Image(systemName: "minus.circle")
@@ -48,6 +49,7 @@ struct CartItemsView: View {
                             
                             Button(action: {
                                 cartItems.quantityOfCartItems.updateValue((cartItems.quantityOfCartItems[product.handle] ?? 0) + 1, forKey: product.handle)
+                                cartItems.setTotalNumbersOfItems()
                             }, label: {
                                 Image(systemName: "plus.circle")
                             })
