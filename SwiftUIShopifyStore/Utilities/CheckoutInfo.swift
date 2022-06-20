@@ -15,6 +15,7 @@ class CheckoutInfo: ObservableObject{
     // MARK: - Body
     func createCheckout() {
         // Checkout create input : https://shopify.dev/api/storefront/2022-04/input-objects/CheckoutCreateInput
+        // SDK instruction: https://github.com/Shopify/mobile-buy-sdk-ios/#checkout-
         
         let checkoutInput = Storefront.CheckoutCreateInput.create(
             note: .value("iOS app anonymous user")

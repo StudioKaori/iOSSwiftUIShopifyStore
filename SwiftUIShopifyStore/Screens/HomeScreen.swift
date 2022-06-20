@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    // MARK: - property
+    // MARK: - Property
     @EnvironmentObject var checkoutInfo: CheckoutInfo
     
     // MARK: - Body
