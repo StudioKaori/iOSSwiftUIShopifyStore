@@ -166,10 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				43B7EAF12844FAC4007F902E /* KeyManager.swift */,
-				43FAD95B285E616300DE3B61 /* CartItems.swift */,
-				43FAD96E2860A90A00DE3B61 /* CheckoutInfo.swift */,
 				43FAD966285F0F7D00DE3B61 /* Constant.swift */,
 				43FAD968285FC52200DE3B61 /* ImageLoader.swift */,
+				43FAD9782861001C00DE3B61 /* EnvironmentObjects */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -301,6 +300,15 @@
 				43FAD949285C8C1F00DE3B61 /* PlayerView.swift */,
 			);
 			path = BackgourdVideoPlayer;
+			sourceTree = "<group>";
+		};
+		43FAD9782861001C00DE3B61 /* EnvironmentObjects */ = {
+			isa = PBXGroup;
+			children = (
+				43FAD95B285E616300DE3B61 /* CartItems.swift */,
+				43FAD96E2860A90A00DE3B61 /* CheckoutInfo.swift */,
+			);
+			path = EnvironmentObjects;
 			sourceTree = "<group>";
 		};
 		8559BC584BF5C17BB0C14A00 /* Frameworks */ = {
