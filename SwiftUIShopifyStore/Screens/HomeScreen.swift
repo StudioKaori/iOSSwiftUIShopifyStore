@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import MobileBuySDK
 
 struct HomeScreen: View {
     // MARK: - Property
-    @EnvironmentObject var checkoutInfo: CheckoutInfo
+    private var checkoutInfo: CheckoutInfo = CheckoutInfo()
     
     // MARK: - Body
     var body: some View {
@@ -40,9 +41,9 @@ struct HomeScreen: View {
         .navigationBarHidden(true)
         .onAppear {
             // Create checkout ID if it isn't exist
-            if checkoutInfo.checkout.checkoutID == nil {
+
                 checkoutInfo.createCheckout()
-            }
+
         }
     }
 }

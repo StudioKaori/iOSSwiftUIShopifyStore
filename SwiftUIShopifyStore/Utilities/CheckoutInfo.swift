@@ -8,9 +8,10 @@
 import SwiftUI
 import MobileBuySDK
 
-class CheckoutInfo: ObservableObject{
+class CheckoutInfo {
     // MARK: - Properties
-    @Published var checkout: Checkout = Checkout()
+    //@Published var checkoutId: GraphQL.ID = GraphQL.ID(rawValue: "")
+    @EnvironmentObject var cartItems: CartItems
     
     // MARK: - Body
     func createCheckout() {
@@ -33,7 +34,7 @@ class CheckoutInfo: ObservableObject{
             }
         }
 
-        let task = ShopifyClient.client.mutateGraphWith(mutation) { result, error in
+        let task = ShopifyClient.client.mutateGraphWith(mutation) { [weak self] result, error in
             guard error == nil else {
                 // handle request error
                 print("Creating checkoutID error.")
@@ -46,12 +47,18 @@ class CheckoutInfo: ObservableObject{
             }
 
             let checkoutID = result?.checkoutCreate?.checkout?.id
-            print("Checkout id : \(checkoutID)")
-            guard checkoutID != nil else {
+            
+            if checkoutID == nil {
                 print("Creating checkoutID error. CheckoutID is nil")
                 return
+            } else {
+                DispatchQueue.main.async {
+                    self?.cartItems.checkoutId = checkoutID!
+                    print("Checkout id : \(self?.cartItems.checkoutId)")
+                }
+                
             }
-            self.checkout.checkoutID = checkoutID
+            
         }
         task.resume()
     }

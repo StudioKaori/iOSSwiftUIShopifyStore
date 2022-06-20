@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import MobileBuySDK
 
 struct AddToCartButtonView: View {
     // MARK: - Property
     @EnvironmentObject var cartItems: CartItems
+    @StateObject var addToCartViewModel: AddToCartViewModel = AddToCartViewModel()
     let product: Product
     
     // MARK: - Body
@@ -22,6 +24,8 @@ struct AddToCartButtonView: View {
             if quantity == 0 {
                 cartItems.cartItems.append(product)
             }
+            
+            addToCartViewModel.addToCart(variantID: product.variantID)
             
             cartItems.quantityOfCartItems.updateValue(newQuantity, forKey: product.handle)
             cartItems.setTotalNumbersOfItems()

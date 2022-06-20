@@ -9,15 +9,29 @@ import SwiftUI
 import MobileBuySDK
 
 class AddToCartViewModel: ObservableObject {
-    @EnvironmentObject var checkoutInfo: CheckoutInfo
+    @EnvironmentObject var cartItems: CartItems
     
     func addToCart(variantID: GraphQL.ID) {
+        
         let lineItem = Storefront.CheckoutLineItemInput.create(quantity: 1, variantId: variantID)
         
         let mutation = Storefront.buildMutation { $0
-            .checkoutLineItemsAdd(lineItems: [lineItem], checkoutId: checkoutInfo.checkout.checkoutID!) { $0
+            .checkoutLineItemsAdd(lineItems: [lineItem], checkoutId: cartItems.checkoutId) { $0
                 .checkout { $0
                     .id()
+                    
+                    .lineItems(first: 30) { $0
+                        .edges { $0
+                            .node { $0
+                                .id()
+                                .quantity()
+                                .title()
+                                .variant({_ in
+                                    
+                                })
+                            }
+                        }
+                    }
                 }
                 .userErrors { $0
                     .field()
@@ -26,7 +40,8 @@ class AddToCartViewModel: ObservableObject {
             }
         }
         
-        let task = ShopifyClient.client.mutateGraphWith(mutation) { result, error in
+        let task = ShopifyClient.client.mutateGraphWith(mutation) { [weak self] result, error in
+            print("Cart result; \(result)")
             guard error == nil else {
                 print("Add to cart error : \(error)")
                 return
@@ -38,6 +53,7 @@ class AddToCartViewModel: ObservableObject {
             }
 
             let checkoutID = result?.checkoutCreate?.checkout?.id
+
         }
         task.resume()
     }
