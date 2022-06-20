@@ -44,6 +44,7 @@
 		43FAD96D28605C6A00DE3B61 /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD96C28605C6A00DE3B61 /* ProductCategory.swift */; };
 		43FAD96F2860A90A00DE3B61 /* CheckoutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD96E2860A90A00DE3B61 /* CheckoutInfo.swift */; };
 		43FAD9732860B8A400DE3B61 /* AddToCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD9722860B8A400DE3B61 /* AddToCartViewModel.swift */; };
+		43FAD9772860F5AF00DE3B61 /* CreateCheckoutIdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD9762860F5AF00DE3B61 /* CreateCheckoutIdViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		43FAD96C28605C6A00DE3B61 /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		43FAD96E2860A90A00DE3B61 /* CheckoutInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutInfo.swift; sourceTree = "<group>"; };
 		43FAD9722860B8A400DE3B61 /* AddToCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewModel.swift; sourceTree = "<group>"; };
+		43FAD9762860F5AF00DE3B61 /* CreateCheckoutIdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCheckoutIdViewModel.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 				43B7EAF7284558D3007F902E /* ShopInfoViewModel.swift */,
 				43B7EAF928456357007F902E /* ProductListViewModel.swift */,
 				43FAD9722860B8A400DE3B61 /* AddToCartViewModel.swift */,
+				43FAD9762860F5AF00DE3B61 /* CreateCheckoutIdViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				43FAD958285E5C5400DE3B61 /* ProductDetailDrawerView.swift in Sources */,
 				43B7EB0D2846292B007F902E /* PreviewSampleObjects.swift in Sources */,
 				43B7EAFD2845D0CD007F902E /* Product.swift in Sources */,
+				43FAD9772860F5AF00DE3B61 /* CreateCheckoutIdViewModel.swift in Sources */,
 				43B7EAFF2845D11C007F902E /* ShopInfo.swift in Sources */,
 				43FAD952285D9D5200DE3B61 /* URLImage.swift in Sources */,
 			);

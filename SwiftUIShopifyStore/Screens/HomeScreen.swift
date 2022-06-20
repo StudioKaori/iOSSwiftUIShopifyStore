@@ -10,7 +10,11 @@ import MobileBuySDK
 
 struct HomeScreen: View {
     // MARK: - Property
-    private var checkoutInfo: CheckoutInfo = CheckoutInfo()
+    @EnvironmentObject var checkoutInfo: CheckoutInfo
+    
+    let createCheckoutIdViewModel = CreateCheckoutIdViewModel()
+    
+    
     
     // MARK: - Body
     var body: some View {
@@ -42,7 +46,9 @@ struct HomeScreen: View {
         .onAppear {
             // Create checkout ID if it isn't exist
             if checkoutInfo.checkoutId == GraphQL.ID(rawValue: "") {
-                checkoutInfo.createCheckout()
+                createCheckoutIdViewModel.createCheckout { checkoutId in
+                    checkoutInfo.checkoutId = checkoutId
+                }
             }
         }
     }
