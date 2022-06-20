@@ -44,6 +44,7 @@
 		43FAD96D28605C6A00DE3B61 /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD96C28605C6A00DE3B61 /* ProductCategory.swift */; };
 		43FAD96F2860A90A00DE3B61 /* CheckoutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD96E2860A90A00DE3B61 /* CheckoutInfo.swift */; };
 		43FAD9712860A95A00DE3B61 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD9702860A95A00DE3B61 /* Checkout.swift */; };
+		43FAD9732860B8A400DE3B61 /* AddToCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD9722860B8A400DE3B61 /* AddToCartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		43FAD96C28605C6A00DE3B61 /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		43FAD96E2860A90A00DE3B61 /* CheckoutInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutInfo.swift; sourceTree = "<group>"; };
 		43FAD9702860A95A00DE3B61 /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
+		43FAD9722860B8A400DE3B61 /* AddToCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewModel.swift; sourceTree = "<group>"; };
 		C92795A7F0442858010D807B /* Pods_SwiftUIShopifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIShopifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,6 +187,7 @@
 			children = (
 				43B7EAF7284558D3007F902E /* ShopInfoViewModel.swift */,
 				43B7EAF928456357007F902E /* ProductListViewModel.swift */,
+				43FAD9722860B8A400DE3B61 /* AddToCartViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				43FAD9712860A95A00DE3B61 /* Checkout.swift in Sources */,
 				43B7EAF8284558D3007F902E /* ShopInfoViewModel.swift in Sources */,
 				43FAD960285F0BEE00DE3B61 /* CartItemsView.swift in Sources */,
+				43FAD9732860B8A400DE3B61 /* AddToCartViewModel.swift in Sources */,
 				43B7EAF52844FECD007F902E /* ShopifyClient.swift in Sources */,
 				43FAD94A285C8C1F00DE3B61 /* PlayerView.swift in Sources */,
 				43FAD956285E2F0F00DE3B61 /* AddToCartButtonView.swift in Sources */,
