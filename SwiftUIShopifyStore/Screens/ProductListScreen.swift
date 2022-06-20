@@ -57,25 +57,31 @@ struct ProductListScreen: View {
                 Spacer()
                 
                 ForEach(ProductCategory.allCases, id: \.rawValue) { category in
-                    Button(action: {
-                        self.productCategory = category
-                        productListViewModel.getProducts(
-                            numbersOfProducts: 26,
-                            query: category == .all ? "" : "tag:\(category)")
-                    }, label: {
-                        VStack {
-                            Text(category.rawValue.uppercased())
-                                .font(.logoFont(size: 18))
-                                .foregroundColor(category.rawValue == productCategory.rawValue ? .black : .gray)
-                        }
-                    })
+                    
+                    VStack{
+                        Button(action: {
+                            self.productCategory = category
+                            productListViewModel.getProducts(
+                                numbersOfProducts: 26,
+                                query: category == .all ? "" : "tag:\(category)")
+                        }, label: {
+                            VStack {
+                                Text(category.rawValue.uppercased())
+                                    .font(.logoFont(size: 18))
+                                    .foregroundColor(category.rawValue == productCategory.rawValue ? .black : .gray)
+                            }
+                        })
+                        
+                        Rectangle()
+                            .foregroundColor(category.rawValue == productCategory.rawValue ? .black : .clear)
+                            .frame(height: 1)
+                    }
+                    
                     Spacer()
                 }
             }
             .padding(.horizontal, 10)
              //: category
-            
-            Divider()
             
             
             // MARK: - Search result
