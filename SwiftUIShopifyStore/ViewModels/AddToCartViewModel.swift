@@ -9,14 +9,17 @@ import SwiftUI
 import MobileBuySDK
 
 class AddToCartViewModel: ObservableObject {
-    @EnvironmentObject var cartItems: CartItems
+    
+    var checkoutId: GraphQL.ID = GraphQL.ID(rawValue: "")
     
     func addToCart(variantID: GraphQL.ID) {
+        print("add to cart variant id: \(variantID)")
+        print("add to cart checkout id: \(checkoutId)")
         
         let lineItem = Storefront.CheckoutLineItemInput.create(quantity: 1, variantId: variantID)
         
         let mutation = Storefront.buildMutation { $0
-            .checkoutLineItemsAdd(lineItems: [lineItem], checkoutId: cartItems.checkoutId) { $0
+            .checkoutLineItemsAdd(lineItems: [lineItem], checkoutId: checkoutId) { $0
                 .checkout { $0
                     .id()
                     
@@ -26,9 +29,6 @@ class AddToCartViewModel: ObservableObject {
                                 .id()
                                 .quantity()
                                 .title()
-                                .variant({_ in
-                                    
-                                })
                             }
                         }
                     }

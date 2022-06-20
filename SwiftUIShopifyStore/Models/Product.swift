@@ -16,4 +16,5 @@ struct Product: Identifiable, Hashable{
     var imageUrls: [URL]
     var handle: String
     var variantID : GraphQL.ID
+    var shopifyID : GraphQL.ID
 }

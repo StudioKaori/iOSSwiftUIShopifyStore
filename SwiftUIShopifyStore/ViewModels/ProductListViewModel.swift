@@ -27,6 +27,7 @@ class ProductListViewModel: ObservableObject {
                         .handle()
                         .title()
                         .description()
+                        .id()
                         .images(first: 5) { $0
                             .edges { $0
                                 .node { $0
@@ -91,7 +92,8 @@ class ProductListViewModel: ObservableObject {
                     price: item.node.priceRange.maxVariantPrice.amount,
                     imageUrls: images,
                     handle: item.node.handle,
-                    variantID: variantID
+                    variantID: variantID,
+                    shopifyID: item.node.id
                 )
                 products.append(product)
             }

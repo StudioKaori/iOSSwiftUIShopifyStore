@@ -8,7 +8,7 @@
 import SwiftUI
 import MobileBuySDK
 
-class CheckoutInfo {
+class CheckoutInfo: ObservableObject {
     // MARK: - Properties
     @Published var checkoutId: GraphQL.ID = GraphQL.ID(rawValue: "")
     
@@ -46,18 +46,20 @@ class CheckoutInfo {
                 // handle any user error
                 return
             }
-
-            let checkoutID = result?.checkoutCreate?.checkout?.id
             
-            if checkoutID == nil {
+            guard let strongSelf = self else {
+                print("strongSelf error")
+                return
+            }
+            
+            guard let safeCheckoutId = result?.checkoutCreate?.checkout?.id as? GraphQL.ID else {
                 print("Creating checkoutID error. CheckoutID is nil")
                 return
-            } else {
-                DispatchQueue.main.async {
-                    self?.checkoutId = checkoutID!
-                    print("Checkout id : \(self?.checkoutId)")
-                }
-                
+            }
+            
+            DispatchQueue.main.async {
+                strongSelf.checkoutId = safeCheckoutId
+                print("Checkout id in DispatchQueue : \(strongSelf.checkoutId)")
             }
             
         }

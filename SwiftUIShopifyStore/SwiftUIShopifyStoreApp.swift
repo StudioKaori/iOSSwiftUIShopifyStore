@@ -15,6 +15,7 @@ struct SwiftUIShopifyStoreApp: App {
                 HomeScreen()
             }
             .environmentObject(CartItems())
+            .environmentObject(CheckoutInfo())
         }
     }
 }

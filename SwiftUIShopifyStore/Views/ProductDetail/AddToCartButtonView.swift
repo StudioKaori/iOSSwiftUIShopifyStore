@@ -11,6 +11,9 @@ import MobileBuySDK
 struct AddToCartButtonView: View {
     // MARK: - Property
     @EnvironmentObject var cartItems: CartItems
+    
+    @EnvironmentObject var checkoutInfo: CheckoutInfo
+    
     @StateObject var addToCartViewModel: AddToCartViewModel = AddToCartViewModel()
     let product: Product
     
@@ -25,8 +28,12 @@ struct AddToCartButtonView: View {
                 cartItems.cartItems.append(product)
             }
             
+            // Shopify checkout
+            print("add to cart checkout id parent: \(checkoutInfo.checkoutId)")
+            addToCartViewModel.checkoutId = checkoutInfo.checkoutId
             addToCartViewModel.addToCart(variantID: product.variantID)
             
+            // local
             cartItems.quantityOfCartItems.updateValue(newQuantity, forKey: product.handle)
             cartItems.setTotalNumbersOfItems()
             feedback.impactOccurred()
