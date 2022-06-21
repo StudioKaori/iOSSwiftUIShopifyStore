@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// To retrieve the api key from the apikey from apikey. plist
 struct KeyManager {
 
     private let keyFilePath = Bundle.main.path(forResource: "apikey", ofType: "plist")

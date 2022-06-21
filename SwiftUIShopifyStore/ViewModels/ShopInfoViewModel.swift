@@ -9,9 +9,11 @@ import Foundation
 import SwiftUI
 import MobileBuySDK
 
+/// ViewModel for getting Shop information from Shopify backend.
 class ShopInfoViewModel: ObservableObject{
     @Published var shopInfo: ShopInfo = ShopInfo(name: "")
     
+    /// Get shop information from Shopify backend. 
     func getShopInfo() {
         let query = Storefront.buildQuery { $0
             .shop { $0

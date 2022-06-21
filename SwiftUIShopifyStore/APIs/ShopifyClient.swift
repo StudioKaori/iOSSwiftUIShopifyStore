@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import MobileBuySDK
 
+/// For Shopify connection
 class ShopifyClient: NSObject {
     
     // Shopify storefront API doc: See 'Query' https://shopify.dev/api/storefront/2022-04/objects/Shop#fields

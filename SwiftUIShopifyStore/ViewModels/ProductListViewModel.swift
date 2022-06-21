@@ -9,12 +9,15 @@ import Foundation
 import SwiftUI
 import MobileBuySDK
 
+/// ViewModel for getting Product information from Shopify backend.
 class ProductListViewModel: ObservableObject {
     
     // MARK: - Properties
     @Published var products: [Product] = []
     
     // MARK: - Methods
+    /// Get product information from Shopify backend.
+    ///  To specify the category, set 'tag:tagname' in the query parameter.
     func getProducts(numbersOfProducts: Int32, query: String = ""){
         var products: [Product] = []
         // products information

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Download images from URL by using ImageLoader and present it as Image
 struct ImageView: View {
     @ObservedObject var imageLoader:ImageLoader
     @State var image:UIImage = UIImage(named: "Logo")!

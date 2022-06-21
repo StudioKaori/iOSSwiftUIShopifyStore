@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Product information
 struct Product: Identifiable, Hashable{
     var id = UUID()
     var title: String

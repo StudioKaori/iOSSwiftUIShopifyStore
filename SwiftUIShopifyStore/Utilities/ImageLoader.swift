@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 
+/// Download images from url
 class ImageLoader: ObservableObject {
     var didChange = PassthroughSubject<Data, Never>()
     var data = Data() {

@@ -7,5 +7,5 @@
 
 import SwiftUI
 
-// UX
+/// For UX. Feedback generator
 let feedback = UIImpactFeedbackGenerator(style: .medium)
