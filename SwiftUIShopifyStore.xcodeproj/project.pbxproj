@@ -197,7 +197,7 @@
 		43B7EB042846248D007F902E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				43FAD96A285FC5E900DE3B61 /* ImageView.swift */,
+				43E2529628632D0D003A4D3D /* AsyncImages */,
 				43FAD965285F0DD100DE3B61 /* BackgourdVideoPlayer */,
 				43B7EB05284624C2007F902E /* ProductList */,
 				43C41B1A2858A50800525824 /* ProductDetail */,
@@ -235,6 +235,15 @@
 			path = ProductDetail;
 			sourceTree = "<group>";
 		};
+		43E2529628632D0D003A4D3D /* AsyncImages */ = {
+			isa = PBXGroup;
+			children = (
+				43FAD951285D9D5200DE3B61 /* URLImage.swift */,
+				43FAD96A285FC5E900DE3B61 /* ImageView.swift */,
+			);
+			path = AsyncImages;
+			sourceTree = "<group>";
+		};
 		43FAD93B285C7FAA00DE3B61 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				43FAD942285C863900DE3B61 /* Font.swift */,
-				43FAD951285D9D5200DE3B61 /* URLImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
