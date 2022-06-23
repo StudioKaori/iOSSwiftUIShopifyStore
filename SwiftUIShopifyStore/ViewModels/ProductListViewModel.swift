@@ -66,11 +66,13 @@ class ProductListViewModel: ObservableObject {
             
             for item in data.products.edges {
                 
-                var images: [URL] = []
-                for image in item.node.images.edges {
-                    let productImageUrl = image.node.url
-                    images.append(productImageUrl)
+                let images: [URL] = item.node.images.edges.map {
+                    $0.node.url
                 }
+//                for image in item.node.images.edges {
+//                    let productImageUrl = image.node.url
+//                    images.append(productImageUrl)
+//                }
                 
                 let product: Product = Product(
                     title: item.node.title,
