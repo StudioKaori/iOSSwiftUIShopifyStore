@@ -9,6 +9,6 @@ import Foundation
 
 /// Shop information
 struct ShopInfo{
-    var name: String
+    let name: String
     //var moneyFormat: String
 }

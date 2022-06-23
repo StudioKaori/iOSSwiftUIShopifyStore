@@ -18,7 +18,7 @@ class ProductListViewModel: ObservableObject {
     // MARK: - Methods
     /// Get product information from Shopify backend.
     ///  To specify the category, set 'tag:tagname' in the query parameter.
-    func getProducts(numbersOfProducts: Int32, query: String = "") throws {
+    func getProducts(numbersOfProducts: Int32, query: String = "") {
         var products: [Product] = []
         // products information
         // https://shopify.dev/api/storefront/2022-04/queries/products
@@ -61,7 +61,6 @@ class ProductListViewModel: ObservableObject {
                 if let error = error {
                     print("Query GraphQL error: \(error)")
                 }
-                throw ApiError.
                 return
             }
             

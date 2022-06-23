@@ -9,11 +9,11 @@ import Foundation
 
 /// Product information
 struct Product: Identifiable, Hashable{
-    var id = UUID()
-    var title: String
-    var description: String
-    var price: Decimal
-    var imageUrls: [URL]
-    var handle: String
+    let id = UUID()
+    let title: String
+    let description: String
+    let price: Decimal
+    let imageUrls: [URL]
+    let handle: String
     
 }
