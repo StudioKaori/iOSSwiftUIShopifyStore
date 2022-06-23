@@ -19,7 +19,6 @@ class ProductListViewModel: ObservableObject {
     /// Get product information from Shopify backend.
     ///  To specify the category, set 'tag:tagname' in the query parameter.
     func getProducts(numbersOfProducts: Int32, query: String = "") {
-        var products: [Product] = []
         // products information
         // https://shopify.dev/api/storefront/2022-04/queries/products
         // product field : https://shopify.dev/api/storefront/2022-04/objects/Product#fields
@@ -64,26 +63,22 @@ class ProductListViewModel: ObservableObject {
                 return
             }
             
-            for item in data.products.edges {
-                
-                let images: [URL] = item.node.images.edges.map {
+            let products: [Product] = data.products.edges.map {
+                let images: [URL] = $0.node.images.edges.map {
                     $0.node.url
                 }
-//                for image in item.node.images.edges {
-//                    let productImageUrl = image.node.url
-//                    images.append(productImageUrl)
-//                }
                 
                 let product: Product = Product(
-                    title: item.node.title,
-                    description: item.node.description,
-                    price: item.node.priceRange.maxVariantPrice.amount,
+                    title: $0.node.title,
+                    description: $0.node.description,
+                    price: $0.node.priceRange.maxVariantPrice.amount,
                     imageUrls: images,
-                    handle: item.node.handle
+                    handle: $0.node.handle
                 )
-                products.append(product)
+                
+                return product
             }
-
+            
             //print("Product View Model : \(products)")
             DispatchQueue.main.async {
                 self?.products = products
