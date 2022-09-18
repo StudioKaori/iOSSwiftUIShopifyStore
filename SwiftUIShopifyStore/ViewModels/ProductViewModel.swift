@@ -76,7 +76,6 @@ class ProductViewModel: ObservableObject {
                 )
 
 
-            //print("Product View Model : \(products)")
             DispatchQueue.main.async {
                 self?.product = product
             }

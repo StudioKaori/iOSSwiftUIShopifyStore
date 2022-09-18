@@ -11,7 +11,7 @@ struct ProductDetailScreen: View {
     // MARK: - Property
     private var product:Product
     
-    private let tempProduct = Product(title: "", description: "", price: 0, imageUrls: [URL(string: "https://cdn.shopify.com/s/files/1/0624/5924/8866/products/pouriya-kafaei-dNmmjX2Owxk-unsplash.jpg?v=1655617432")!], handle: "")
+    private let tempProduct = Product(title: "", description: "", price: 0, imageUrls: [], handle: "")
     
     // For drawer
     @State private var isAnimating: Bool = false
@@ -37,16 +37,26 @@ struct ProductDetailScreen: View {
             Color.clear
             
             // Product images
-            TabView {
-                ForEach(product.imageUrls, id: \.self) { imageUrl in
-                    ImageView(withURL: imageUrl)
-                        .aspectRatio(contentMode: .fill)
-                }
+            
+            if(product.imageUrls.count != 0) {
+                TabView {
+                    ForEach(product.imageUrls, id: \.self) { imageUrl in
+                        ImageView(withURL: imageUrl)
+                            .aspectRatio(contentMode: .fill)
+                    }
+                }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200, alignment: .top)
+                    .padding(0)
+                    .tabViewStyle(PageTabViewStyle())
+                    .indexViewStyle(.page(backgroundDisplayMode: .always))
+            } else {
+                Image("Logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: 250, maxHeight: 250)
+                    .foregroundColor(.gray)
             }
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200, alignment: .top)
-            .padding(0)
-            .tabViewStyle(PageTabViewStyle())
-            .indexViewStyle(.page(backgroundDisplayMode: .always))
+            
+            
             
             // header
             HeaderDetailView(productTitle: product.title)
