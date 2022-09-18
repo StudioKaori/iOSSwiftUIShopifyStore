@@ -9,20 +9,25 @@ import SwiftUI
 
 struct ProductDetailScreen: View {
     // MARK: - Property
-    var product:Product
+    private var product:Product
     
-    private let tempProduct = Product(title: "", description: "", price: 0, imageUrls: [], handle: "")
+    private let tempProduct = Product(title: "", description: "", price: 0, imageUrls: [URL(string: "https://cdn.shopify.com/s/files/1/0624/5924/8866/products/pouriya-kafaei-dNmmjX2Owxk-unsplash.jpg?v=1655617432")!], handle: "")
     
     // For drawer
     @State private var isAnimating: Bool = false
     @State private var isDrawerOpen: Bool = false
     
+    
+    // MARK: - Initialiser
     init(product: Product) {
         self.product = product
     }
     
     init(productHandle: String) {
+        let productViewModel = ProductViewModel()
+        productViewModel.getProductDetail(productHandle: productHandle)
         self.product = tempProduct
+        //self.product = productViewModel.getProductDetail(productHandle: productHandle)
     }
     
     

@@ -59,26 +59,27 @@ class ProductViewModel: ObservableObject {
                 return
             }
             
-            print("product data", data)
+            print("ProductViewModel,product data", data)
             
-//
-//                let images: [URL] = data.images.edges.map {
-//                    $0.node.url
-//                }
-//
-//                let product: Product = Product(
-//                    title: data.node.title,
-//                    description: data.node.description,
-//                    price: data.node.priceRange.maxVariantPrice.amount,
-//                    imageUrls: images,
-//                    handle: data.node.handle
-//                )
-//
-//
-//            //print("Product View Model : \(products)")
-//            DispatchQueue.main.async {
-//                self?.product = product
-//            }
+
+            guard let myProduct: Storefront.Product = data.product else { return }
+            let images: [URL] = myProduct.images.edges.map {
+                    $0.node.url
+                }
+
+                let product: Product = Product(
+                    title: myProduct.title,
+                    description: myProduct.description,
+                    price: myProduct.priceRange.maxVariantPrice.amount,
+                    imageUrls: images,
+                    handle: myProduct.handle
+                )
+
+
+            //print("Product View Model : \(products)")
+            DispatchQueue.main.async {
+                self?.product = product
+            }
         }
         productsTask.resume()
         
