@@ -10,13 +10,21 @@ import SwiftUI
 struct ProductDetailScreen: View {
     // MARK: - Property
     var product:Product?
-    var productHanlde: String?
+    var productHandle: String?
     
     private let tempProduct = Product(title: "", description: "", price: 0, imageUrls: [], handle: "")
     
     // For drawer
     @State private var isAnimating: Bool = false
     @State private var isDrawerOpen: Bool = false
+    
+    init(product: Product) {
+        self.product = product
+    }
+    
+    init(productHandle: String) {
+        self.productHandle = productHandle
+    }
     
     
     // MARK: - Body

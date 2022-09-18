@@ -32,7 +32,7 @@ struct HomeScreen: View {
                     .font(Font.logoFont(size: 16))
                     .padding(.bottom, 40)
                 
-                NavigationLink(destination: ProductDetailScreen(), label: {
+                NavigationLink(destination: ProductDetailScreen(productHandle: "the-lip-stick"), label: {
                     Text("See the sample product")
                 })
                 
