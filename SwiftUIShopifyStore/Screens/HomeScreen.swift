@@ -32,6 +32,10 @@ struct HomeScreen: View {
                     .font(Font.logoFont(size: 16))
                     .padding(.bottom, 40)
                 
+                NavigationLink(destination: ProductDetailScreen(), label: {
+                    Text("See the sample product")
+                })
+                
                 
                 BottomMenuBarView(currentView: "HomeScreen")
             } //: VStack

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ProductDetailScreen: View {
     // MARK: - Property
-    var product:Product
+    var product:Product?
+    var productHanlde: String?
+    
+    private let tempProduct = Product(title: "", description: "", price: 0, imageUrls: [], handle: "")
+    
     // For drawer
     @State private var isAnimating: Bool = false
     @State private var isDrawerOpen: Bool = false
@@ -22,7 +26,7 @@ struct ProductDetailScreen: View {
             
             // Product images
             TabView {
-                ForEach(product.imageUrls, id: \.self) { imageUrl in
+                ForEach(product?.imageUrls ?? tempProduct.imageUrls, id: \.self) { imageUrl in
                     ImageView(withURL: imageUrl)
                         .aspectRatio(contentMode: .fill)
                 }
@@ -33,7 +37,7 @@ struct ProductDetailScreen: View {
             .indexViewStyle(.page(backgroundDisplayMode: .always))
             
             // header
-            HeaderDetailView(productTitle: product.title)
+            HeaderDetailView(productTitle: product?.title ?? tempProduct.title)
                 .padding(.top, 80)
             
             
@@ -44,7 +48,7 @@ struct ProductDetailScreen: View {
         }
         // MARK: - Drawer
         .overlay(alignment: .top) {
-            ProductDetailDrawerView(product: product, isDrawerOpen: $isDrawerOpen, isAnimating: $isAnimating)
+            ProductDetailDrawerView(product: product ?? tempProduct, isDrawerOpen: $isDrawerOpen, isAnimating: $isAnimating)
         }
         // MARK: - Bottom menu
         .overlay(alignment: .bottom, content: {
