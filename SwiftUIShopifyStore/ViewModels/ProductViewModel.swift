@@ -13,7 +13,7 @@ import MobileBuySDK
 class ProductViewModel: ObservableObject {
     
     // MARK: - Properties
-    @Published var product: Product?
+    @Published var product: Product = Product(title: "", description: "", price: 0, imageUrls: [], handle: "")
     
     // MARK: - Methods
     /// Get product information from Shopify backend.
