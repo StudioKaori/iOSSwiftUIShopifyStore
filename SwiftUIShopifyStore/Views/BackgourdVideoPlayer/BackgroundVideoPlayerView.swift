@@ -9,8 +9,8 @@ import SwiftUI
 import AVKit
 import AVFoundation
 
-struct PlayerView: UIViewRepresentable {
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PlayerView>) {
+struct BackgroundVideoPlayerView: UIViewRepresentable {
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<BackgroundVideoPlayerView>) {
     }
 
     func makeUIView(context: Context) -> UIView {
