@@ -6,15 +6,22 @@
 //
 
 import SwiftUI
+import SwiftUIBamMiniPlayerLibrary
 
 @main
 struct SwiftUIShopifyStoreApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                HomeScreen()
+            ZStack(alignment: .top) {
+                NavigationView {
+                                HomeScreen()
+                            }
+                            .environmentObject(CartItems())
+                
+                
+                // Player
+            PlayerView()
             }
-            .environmentObject(CartItems())
         }
     }
 }

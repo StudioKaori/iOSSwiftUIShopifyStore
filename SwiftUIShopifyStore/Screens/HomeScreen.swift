@@ -6,14 +6,19 @@
 //
 
 import SwiftUI
+import SwiftUIBamMiniPlayerLibrary
 
 struct HomeScreen: View {
     // MARK: - property
+    @StateObject private var playerStatus = PlayerStatus.shared
+    @StateObject private var playerMessageHandler = PlayerMessageHandler.shared
     
     // MARK: - Body
     var body: some View {
         ZStack(alignment: .top) {
-            PlayerView()
+       
+            // Background video
+            BackgroundVideoPlayerView()
                 .frame(width: UIScreen.main.bounds.width)
                 .edgesIgnoringSafeArea(.all)
             
@@ -36,9 +41,24 @@ struct HomeScreen: View {
                     Text("See the sample product")
                 })
                 
+                Button(action: {
+                    playerStatus.isPlayerViewVisible ? PlayerWebView.shared.playerClose() :  PlayerWebView.shared.playerOpen(showID: "DIpYtdMq9TGDOLeFbY9X")
+                }, label: {
+                    Text(playerStatus.isPlayerViewVisible ? "Close the player" : "Open the player")
+
+                })
+
+                NavigationLink(destination: ProductDetailScreen(productHandle: playerMessageHandler.currentProduct.sku), isActive: $playerMessageHandler.isChildViewVisible, label: {
+                    EmptyView()
+                })
+
                 
                 BottomMenuBarView(currentView: "HomeScreen")
             } //: VStack
+                    
+            
+
+            
         } //: Zstack
         .navigationBarTitle("Home")
         .navigationBarHidden(true)

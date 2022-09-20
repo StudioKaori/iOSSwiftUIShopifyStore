@@ -25,11 +25,12 @@
 		43B7EB0D2846292B007F902E /* PreviewSampleObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7EB0C2846292B007F902E /* PreviewSampleObjects.swift */; };
 		43C41B192858A4FA00525824 /* NavigationBarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C41B182858A4FA00525824 /* NavigationBarDetailView.swift */; };
 		43C41B1C2858B7E300525824 /* HeaderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C41B1B2858B7E300525824 /* HeaderDetailView.swift */; };
+		43C8BDDE28DA0D040073109B /* SwiftUIBamMiniPlayerLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 43C8BDDD28DA0D040073109B /* SwiftUIBamMiniPlayerLibrary */; };
 		43E9B68728D7013F00ED7CB4 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9B68628D7013F00ED7CB4 /* ProductViewModel.swift */; };
 		43FAD93F285C82B600DE3B61 /* Cormorant.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43FAD93E285C82B600DE3B61 /* Cormorant.ttf */; };
 		43FAD941285C852A00DE3B61 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD940285C852A00DE3B61 /* HomeScreen.swift */; };
 		43FAD943285C863900DE3B61 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD942285C863900DE3B61 /* Font.swift */; };
-		43FAD94A285C8C1F00DE3B61 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD949285C8C1F00DE3B61 /* PlayerView.swift */; };
+		43FAD94A285C8C1F00DE3B61 /* BackgroundVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD949285C8C1F00DE3B61 /* BackgroundVideoPlayerView.swift */; };
 		43FAD94C285C8CE900DE3B61 /* main-m.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 43FAD94B285C8CE900DE3B61 /* main-m.mp4 */; };
 		43FAD950285CAB3300DE3B61 /* BottomMenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD94F285CAB3300DE3B61 /* BottomMenuBarView.swift */; };
 		43FAD952285D9D5200DE3B61 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAD951285D9D5200DE3B61 /* URLImage.swift */; };
@@ -71,7 +72,7 @@
 		43FAD93E285C82B600DE3B61 /* Cormorant.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cormorant.ttf; sourceTree = "<group>"; };
 		43FAD940285C852A00DE3B61 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		43FAD942285C863900DE3B61 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		43FAD949285C8C1F00DE3B61 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		43FAD949285C8C1F00DE3B61 /* BackgroundVideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundVideoPlayerView.swift; sourceTree = "<group>"; };
 		43FAD94B285C8CE900DE3B61 /* main-m.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "main-m.mp4"; sourceTree = "<group>"; };
 		43FAD94F285CAB3300DE3B61 /* BottomMenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuBarView.swift; sourceTree = "<group>"; };
 		43FAD951285D9D5200DE3B61 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				168F269540B81CDBEAAD1A26 /* Pods_SwiftUIShopifyStore.framework in Frameworks */,
+				43C8BDDE28DA0D040073109B /* SwiftUIBamMiniPlayerLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +302,7 @@
 		43FAD965285F0DD100DE3B61 /* BackgourdVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				43FAD949285C8C1F00DE3B61 /* PlayerView.swift */,
+				43FAD949285C8C1F00DE3B61 /* BackgroundVideoPlayerView.swift */,
 			);
 			path = BackgourdVideoPlayer;
 			sourceTree = "<group>";
@@ -340,6 +342,9 @@
 			dependencies = (
 			);
 			name = SwiftUIShopifyStore;
+			packageProductDependencies = (
+				43C8BDDD28DA0D040073109B /* SwiftUIBamMiniPlayerLibrary */,
+			);
 			productName = SwiftUIShopifyStore;
 			productReference = 43B7EADC28449BB5007F902E /* SwiftUIShopifyStore.app */;
 			productType = "com.apple.product-type.application";
@@ -368,6 +373,9 @@
 				Base,
 			);
 			mainGroup = 43B7EAD328449BB5007F902E;
+			packageReferences = (
+				43C8BDDC28DA0D040073109B /* XCRemoteSwiftPackageReference "SwiftUIBamMiniPlayerLibrary" */,
+			);
 			productRefGroup = 43B7EADD28449BB5007F902E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -460,7 +468,7 @@
 				43B7EAF8284558D3007F902E /* ShopInfoViewModel.swift in Sources */,
 				43FAD960285F0BEE00DE3B61 /* CartItemsView.swift in Sources */,
 				43B7EAF52844FECD007F902E /* ShopifyClient.swift in Sources */,
-				43FAD94A285C8C1F00DE3B61 /* PlayerView.swift in Sources */,
+				43FAD94A285C8C1F00DE3B61 /* BackgroundVideoPlayerView.swift in Sources */,
 				43FAD956285E2F0F00DE3B61 /* AddToCartButtonView.swift in Sources */,
 				43B7EB082846250C007F902E /* TitleView.swift in Sources */,
 				43FAD943285C863900DE3B61 /* Font.swift in Sources */,
@@ -673,6 +681,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43C8BDDC28DA0D040073109B /* XCRemoteSwiftPackageReference "SwiftUIBamMiniPlayerLibrary" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StudioKaori/SwiftUIBamMiniPlayerLibrary";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43C8BDDD28DA0D040073109B /* SwiftUIBamMiniPlayerLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43C8BDDC28DA0D040073109B /* XCRemoteSwiftPackageReference "SwiftUIBamMiniPlayerLibrary" */;
+			productName = SwiftUIBamMiniPlayerLibrary;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43B7EAD428449BB5007F902E /* Project object */;
 }
